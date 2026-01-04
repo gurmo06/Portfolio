@@ -7,23 +7,41 @@ export default function Home() {
 
   const links = [
     { label: "GitHub", href: "https://github.com/gurmo06" },
-    { label: "LinkedIn", href: "https://linkedin.com/..." },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/gurmohit-singh-88593b326/" },
     { label: "Resume", href: "/resume/resume.pdf" },
   ];
 
   const projects = [
     {
-      name: "Project One",
-      description: "desc1",
-      tech: ["tmp"],
-      href: "https://github.com/project1",
+      name: "QARDS - THE Quantum Card Game",
+      description: "• A digital card game with a unique twist involving quantum mechanics.\n• Incorporates superposition, entanglement, and constructive and destructive interference from a Grover diffusion operator.\n• Offers both a CLI and GUI version.\n• Won 2nd at the UT IBM Qiskit Fall Fest Hackathon 2025!",
+      tech: ["Python", "Qiskit", "PySide6"],
+      href: "https://github.com/gurmo06/QARDS",
     },
     {
-      name: "Project Two",
-      description: "desc2",
-      tech: ["tmp"],
-      href: "https://github.com/project2",
+      name: "System Visualizer",
+      description: "• An online visualization for different system components.\n• Includes simulations for CPU registers, ALU operations, cache memory, and pipelining.\n• Not currently active, still a WIP.",
+      tech: ["TypeScript"],
+      href: "https://github.com/gurmo06/System_Visualizer",
     },
+    {
+      name: "Tau",
+      description: "• A simple Discord bot with various math functions.\n• Will be expanded with matrix calculations and calculus functions.\n• Currently offline (was previously hosted on Railway but trial ended).",
+      tech: ["Python", "Discord API"],
+      href: "https://github.com/gurmo06/Tau_Python",
+    },
+    {
+      name: "Tandoorish Indian Cuisine Restaurant Website",
+      description: "• A responsive website for a local Indian restaurant.\n• Features a menu, reservation system, and contact information.\n• Currently building and deploying.",
+      tech: ["TypeScript", "Vite", "React", "Tailwind CSS", "Spring Boot"],
+      href: "https://github.com/gurmo06",
+    },
+    {
+      name: "This Portfolio!",
+      description: "• A personal portfolio website to showcase my projects and skills.\n• Features sections for about me, projects, and contact information.\n• Should be up if you're looking at it :)",
+      tech: ["TypeScript", "Next.js", "React","Tailwind CSS"],
+      href: "https://github.com/gurmo06/Portfolio/tree/main",
+    }
   ];
 
   return (
@@ -92,11 +110,11 @@ export default function Home() {
                   <span className="text-muted-foreground group-hover:text-foreground transition">
                     ↗
                   </span>
-                </div>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                </div >
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed whitespace-pre-wrap">
                   {p.description}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-2 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
                     <span
                       key={t}
