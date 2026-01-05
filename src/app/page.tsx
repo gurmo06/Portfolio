@@ -1,17 +1,20 @@
 // /src/app/page.tsx
-export default function Home() {
+export default function Home()
+{
   const name = "Gurmohit Singh";
   const title = "CS Student • Builder • Developer";
   const location = "Austin, TX";
   const email = "gurmo06@my.utexas.edu";
 
-  const links = [
+  const links =
+  [
     { label: "GitHub", href: "https://github.com/gurmo06" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/gurmohit-singh-88593b326/" },
     { label: "Resume", href: "/resume/tmp.pdf" },
   ];
 
-  const projects = [
+  const projects =
+  [
     {
       name: "QARDS - THE Quantum Card Game",
       description: "• A digital card game with a unique twist involving quantum mechanics.\n• Incorporates superposition, entanglement, and constructive and destructive interference from a Grover diffusion operator.\n• Offers both a CLI and GUI version.\n• Won 2nd at the UT IBM Qiskit Fall Fest Hackathon 2025!",
@@ -56,7 +59,8 @@ export default function Home() {
           <p className="text-lg text-foreground">{title}</p>
 
           <div className="flex flex-wrap gap-3 pt-2">
-            {links.map((link) => (
+            {links.map((link) =>
+            (
               <a
                 key={link.label}
                 href={link.href}
@@ -97,7 +101,8 @@ export default function Home() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            {projects.map((p) => (
+            {projects.map((p) =>
+            (
               <a
                 key={p.name}
                 href={p.href}
@@ -115,7 +120,8 @@ export default function Home() {
                   {p.description}
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  {p.tech.map((t) => (
+                  {p.tech.map((t) =>
+                  (
                     <span
                       key={t}
                       className="rounded-full bg-muted px-3 py-1 text-xs text-foreground group-hover:text-muted-fg transition"
