@@ -8,7 +8,7 @@ export default function Home() {
   const links = [
     { label: "GitHub", href: "https://github.com/gurmo06" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/gurmohit-singh-88593b326/" },
-    { label: "Resume", href: "/resume/resume.pdf" },
+    { label: "Resume", href: "/resume/tmp.pdf" },
   ];
 
   const projects = [
@@ -17,6 +17,12 @@ export default function Home() {
       description: "• A digital card game with a unique twist involving quantum mechanics.\n• Incorporates superposition, entanglement, and constructive and destructive interference from a Grover diffusion operator.\n• Offers both a CLI and GUI version.\n• Won 2nd at the UT IBM Qiskit Fall Fest Hackathon 2025!",
       tech: ["Python", "Qiskit", "PySide6"],
       href: "https://github.com/gurmo06/QARDS",
+    },
+    {
+      name: "Tandoorish Indian Cuisine Restaurant Website",
+      description: "• A rebuilt, responsive website for a local Indian restaurant.\n• Features a menu, reservation system, and contact information.\n• Currently building and deploying.",
+      tech: ["TypeScript", "Vite", "React", "Tailwind CSS", "Spring Boot"],
+      href: "https://github.com/gurmo06",
     },
     {
       name: "System Visualizer",
@@ -31,12 +37,6 @@ export default function Home() {
       href: "https://github.com/gurmo06/Tau_Python",
     },
     {
-      name: "Tandoorish Indian Cuisine Restaurant Website",
-      description: "• A responsive website for a local Indian restaurant.\n• Features a menu, reservation system, and contact information.\n• Currently building and deploying.",
-      tech: ["TypeScript", "Vite", "React", "Tailwind CSS", "Spring Boot"],
-      href: "https://github.com/gurmo06",
-    },
-    {
       name: "This Portfolio!",
       description: "• A personal portfolio website to showcase my projects and skills.\n• Features sections for about me, projects, and contact information.\n• Should be up if you're looking at it :)",
       tech: ["TypeScript", "Next.js", "React","Tailwind CSS"],
@@ -49,18 +49,18 @@ export default function Home() {
       <div className="mx-auto max-w-4xl px-6 py-16">
         {/* Header */}
         <header className="space-y-4">
-          <p className="text-sm text-muted-foreground">{location}</p>
+          <p className="text-sm text-foreground">{location}</p>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             {name}
           </h1>
-          <p className="text-lg text-muted-foreground">{title}</p>
+          <p className="text-lg text-foreground">{title}</p>
 
           <div className="flex flex-wrap gap-3 pt-2">
             {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="rounded-full border px-4 py-2 text-sm hover:bg-muted transition"
+                className="rounded-full border px-4 py-2 text-sm hover:bg-muted-bg transition"
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
               >
@@ -69,7 +69,7 @@ export default function Home() {
             ))}
             <a
               href={`mailto:${email}`}
-              className="rounded-full bg-foreground px-4 py-2 text-sm text-background hover:opacity-90 transition"
+              className="rounded-full bg-foreground px-4 py-2 text-sm text-background hover:bg-muted-fg transition"
             >
               Email
             </a>
@@ -79,7 +79,7 @@ export default function Home() {
         {/* About */}
         <section className="mt-14 space-y-3">
           <h2 className="text-xl font-semibold">About</h2>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-foreground leading-relaxed">
             about
           </p>
         </section>
@@ -90,7 +90,7 @@ export default function Home() {
             <h2 className="text-xl font-semibold">Projects</h2>
             <a
               href="/projects"
-              className="text-sm text-muted-foreground hover:text-foreground transition"
+              className="text-sm text-foreground hover:text-muted-fg transition"
             >
               View all →
             </a>
@@ -103,22 +103,22 @@ export default function Home() {
                 href={p.href}
                 target={p.href.startsWith("http") ? "_blank" : undefined}
                 rel={p.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group rounded-2xl border p-5 hover:bg-muted/50 transition"
+                className="group rounded-2xl border p-5"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-base font-semibold">{p.name}</h3>
-                  <span className="text-muted-foreground group-hover:text-foreground transition">
+                  <h3 className="text-base font-semibold text-foreground group-hover:text-muted-fg transition">{p.name}</h3>
+                  <span className="text-foreground group-hover:text-muted-fg transition">
                     ↗
                   </span>
-                </div >
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                </div>
+                <p className="mt-2 text-sm text-foreground leading-relaxed whitespace-pre-wrap group-hover:text-muted-fg transition">
                   {p.description}
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground"
+                      className="rounded-full bg-muted px-3 py-1 text-xs text-foreground group-hover:text-muted-fg transition"
                     >
                       {t}
                     </span>
@@ -126,6 +126,15 @@ export default function Home() {
                 </div>
               </a>
             ))}
+            {/* Timeline */}
+            <a
+            href="/src/app/timeline/page.tsx"
+            className="rounded-2xl border p-5 hover:bg-muted/50 transition"
+            >
+              <div className="">
+
+              </div>
+            </a>
           </div>
         </section>
 

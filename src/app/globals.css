@@ -3,19 +3,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --muted-bg: #f3f4f6;
+  --muted-fg: #6b7280;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted-bg: var(--muted-bg);
+  --color-muted-fg: var(--muted-fg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #ffffff;
+    --muted-bg: #262626;
+    --muted-fg: #c0c0c0;
   }
 }
 
