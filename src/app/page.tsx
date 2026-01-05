@@ -25,7 +25,7 @@ export default function Home()
       name: "Tandoorish Indian Cuisine Restaurant Website",
       description: "• A rebuilt, responsive website for a local Indian restaurant.\n• Features a menu, reservation system, and contact information.\n• Currently building and deploying.",
       tech: ["TypeScript", "Vite", "React", "Tailwind CSS", "Spring Boot"],
-      href: "https://github.com/gurmo06",
+      href: "https://tandoorish.com",
     },
     {
       name: "System Visualizer",
@@ -53,7 +53,7 @@ export default function Home()
         {/* Header */}
         <header className="space-y-4">
           <p className="text-sm text-foreground">{location}</p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="text-5xl font-bold tracking-tight">
             {name}
           </h1>
           <p className="text-lg text-foreground">{title}</p>
@@ -84,7 +84,7 @@ export default function Home()
         <section className="mt-14 space-y-3">
           <h2 className="text-xl font-semibold">About</h2>
           <p className="text-foreground leading-relaxed">
-            about
+            I'm a computer science student at the University of Texas at Austin, passionate about building software that makes a difference, be it big or small. I enjoy working on projects that challenge me to learn new technologies and improve my skills. When I'm not coding, I like to play games, read, tinker with hardware, and experiment with cooking.
           </p>
         </section>
 
@@ -132,14 +132,15 @@ export default function Home()
                 </div>
               </a>
             ))}
+
             {/* Timeline */}
             <a
-            href="/src/app/timeline/page.tsx"
-            className="rounded-2xl border p-5 hover:bg-muted/50 transition"
+            href="/timeline"
+            className="rounded-2xl border p-5 flex items-center justify-center min-h-[180px] hover:bg-muted/50 transition"
             >
-              <div className="">
-
-              </div>
+                <h3 className="text-4xl font-semibold text-foreground group-hover:text-muted-fg transition">
+                  My Timeline (WIP)
+                </h3>
             </a>
           </div>
         </section>
