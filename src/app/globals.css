@@ -18,10 +18,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
-    --muted-bg: #262626;
-    --muted-fg: #c0c0c0;
+    --background: #0F0F0E;
+    --foreground: #F8F4EC;
+    --muted-bg:   #1A1A18;
+    --muted-fg:   #B5AEA3;
   }
 }
 

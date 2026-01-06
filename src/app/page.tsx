@@ -29,7 +29,7 @@ export default function Home()
     },
     {
       name: "System Visualizer",
-      description: "• An online visualization for different system components.\n• Includes simulations for CPU registers, ALU operations, cache memory, and pipelining.\n• Not currently active, still a WIP.",
+      description: "• An online visualization for different system components.\n• Includes simulations for CPU registers, ALU operations, cache memory, and pipelining.\n• Designed the codebase to be extensible; actively expanding modules (WIP).",
       tech: ["TypeScript"],
       href: "https://github.com/gurmo06/System_Visualizer",
     },
