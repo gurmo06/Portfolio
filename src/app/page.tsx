@@ -10,7 +10,7 @@ export default function Home()
   [
     { label: "GitHub", href: "https://github.com/gurmo06" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/gurmohit-singh-88593b326/" },
-    { label: "Resume", href: "/resume/tmp.pdf" },
+    { label: "Resume", href: "/resume/Gurmohit Singh - Technical Resume.pdf" },
   ];
 
   const projects =
