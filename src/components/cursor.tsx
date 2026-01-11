@@ -26,8 +26,8 @@ export default function Cursor()
     const animate = () =>
     {
       /* Smooth follow for the ring */
-      rx += (x - rx) * 0.12;
-      ry += (y - ry) * 0.12;
+      rx += (x - rx) * 0.5;
+      ry += (y - ry) * 0.5;
       ring.style.transform = `translate(${rx}px, ${ry}px)`;
       requestAnimationFrame(animate);
     };
