@@ -1,7 +1,7 @@
 // /src/app/simple-high-contrast/page.tsx
 
 /* Import biographical data from the bio.tsx module */
-import { name, title, location, email, about, links, projects } from "./../bio";
+import { name, title, location, email, about, links, projects } from "@/lib/bio";
 
 /* Alternative High Contrast Page */
 export default function Home()

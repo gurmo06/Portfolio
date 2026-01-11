@@ -1,7 +1,7 @@
 // /src/app/page.tsx
 
 /* Import biographical data from the bio.tsx module */
-import { name, title, location, email, about, links, projects } from "./bio";
+import { name, title, location, email, about, links, projects } from "@/lib/bio";
 
 /* Main Page */
 export default function Home()

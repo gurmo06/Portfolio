@@ -41,3 +41,10 @@ body
 {
   display: none;
 }
+
+/* Hide cursor on devices with fine pointers (e.g., mouse) */
+@media (pointer: fine)
+{
+  body { cursor: none; }
+  a, button { cursor: none; }
+}
