@@ -90,7 +90,7 @@ export default function Home()
 
         {/* Projects */}
         <section className="mt-14 space-y-6">
-          <div className="flex items-end justify-between gap-4">
+          {/*<div className="flex items-end justify-between gap-4">
             <h2 className="text-xl font-semibold">Projects</h2>
             <a
               href="/projects"
@@ -98,7 +98,7 @@ export default function Home()
             >
               View all →
             </a>
-          </div>
+          </div>*/}
 
           <div className="grid gap-4 sm:grid-cols-2">
             {projects.map((p) =>
