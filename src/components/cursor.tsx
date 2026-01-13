@@ -1,3 +1,5 @@
+// /src/components/cursor.tsx
+
 "use client";
 
 import { useEffect, useRef } from "react";

@@ -1,4 +1,5 @@
-// /src/app/bio.tsx
+// /src/lib/bio.tsx
+
 export const name = "Gurmohit Singh";
 export const title = "CS Student • Builder • Developer";
 export const location = "Austin, TX";
