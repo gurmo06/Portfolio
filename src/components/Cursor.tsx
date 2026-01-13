@@ -1,4 +1,4 @@
-// /src/components/cursor.tsx
+// /src/components/Cursor.tsx
 
 "use client";
 
@@ -28,8 +28,8 @@ export default function Cursor()
     const animate = () =>
     {
       /* Smooth follow for the ring */
-      rx += (x - rx) * 0.18;
-      ry += (y - ry) * 0.18;
+      rx += (x - rx) * 0.16;
+      ry += (y - ry) * 0.16;
       ring.style.transform = `translate(${rx}px, ${ry}px)`;
       requestAnimationFrame(animate);
     };

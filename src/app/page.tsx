@@ -4,7 +4,7 @@
 import ProjectCard from "@/components/ProjectCard";
 
 /* Import biographical data from the bio.tsx module */
-import { name, title, location, email, about, links, projects } from "@/lib/bio";
+import { name, title, location, email, about, links, projects } from "@/lib/Bio";
 
 /* Main Page */
 export default function Home()

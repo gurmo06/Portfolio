@@ -1,4 +1,4 @@
-// /src/lib/bio.tsx
+// /src/lib/Bio.tsx
 
 export const name = "Gurmohit Singh";
 export const title = "CS Student • Builder • Developer";
