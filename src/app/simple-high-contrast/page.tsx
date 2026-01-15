@@ -67,7 +67,7 @@ export default function Home()
                 href = {p.href}
                 target = {p.href.startsWith("http") ? "_blank" : undefined}
                 rel = {p.href.startsWith("http") ? "noreferrer" : undefined}
-                className = "group rounded-2xl border p-5"
+                className={p.name === "This Portfolio!" ? "sm:col-span-2 group rounded-2xl border p-5" : "group rounded-2xl border p-5"}
               >
                 <div className = "flex items-start justify-between gap-4">
                   <h3 className = "text-base font-semibold text-foreground group-hover:text-muted-fg transition">{p.name}</h3>
