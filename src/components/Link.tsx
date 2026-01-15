@@ -23,7 +23,7 @@ export default function Link({ href, className = "", children, target, rel }: Pr
     if (!el) return;
 
     const rect = el.getBoundingClientRect();
-    /* x and y relative to the card */
+    /* x and y relative to the link */
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top; 
 
@@ -57,7 +57,7 @@ export default function Link({ href, className = "", children, target, rel }: Pr
         style =
         {{
           background:
-            "radial-gradient(150px circle at var(--mx) var(--my), rgba(255,255,255,0.14), transparent 50%)",
+            "radial-gradient(150px circle at var(--mx) var(--my), rgba(255,255,255,0.16), transparent 50%)",
         }}
       />
 

@@ -52,23 +52,23 @@ export default function Home()
 
           {/* About */}
           <section className = "mt-10 space-y-3">
-            <h2 className = "text-xl font-semibold">About</h2>
+            <h2 className = "text-2xl font-semibold">About</h2>
             <p className = "text-foreground leading-relaxed">
               {about}
             </p>
           </section>
 
           {/* Projects */}
-          <section className = "mt-12 space-y-6">
-            {/*<div className = "flex items-end justify-between gap-4">
-              <h2 className = "text-xl font-semibold">Projects</h2>
-              <a
+          <section className = "mt-8 space-y-6">
+            <div className = "flex items-end justify-between gap-4">
+              <h2 className = "text-3xl font-semibold">Projects</h2>
+              {/*<a
                 href = "/projects"
                 className = "text-sm text-foreground hover:text-muted-fg transition"
               >
                 View all →
-              </a>
-            </div>*/}
+              </a>*/}
+            </div>
 
             <div className = "grid gap-4 sm:grid-cols-2">
               {projects.map((p) =>
@@ -116,7 +116,7 @@ export default function Home()
           </section>
 
           {/* Footer */}
-          <footer className = "mt-16 border-t pt-8 text-sm text-muted-foreground">
+          <footer className = "mt-12 border-t pt-8 text-sm text-muted-foreground">
             <p>
               © {new Date().getFullYear()} {name}. Built with Next.js.
             </p>
