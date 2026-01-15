@@ -1,4 +1,4 @@
-// /src/app/simple-high-contrast/page.tsx
+// /src/app/simple-no-effects/page.tsx
 
 /* Import necessary modules and components */
 import PageToggle from "@/components/PageToggle";
@@ -37,7 +37,7 @@ export default function Home()
               ))}
               <a
                 href = {`mailto:${email}`}
-                className = "rounded-full bg-foreground px-4 py-2 text-sm text-background hover:bg-muted-fg transition"
+                className = "rounded-full border border-transparent bg-foreground px-4 py-2 text-sm text-background hover:bg-muted-fg transition"
               >
                 Email
               </a>
