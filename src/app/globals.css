@@ -42,9 +42,12 @@ body
   display: none;
 }
 
-/* Hide cursor on devices with fine pointers (e.g., mouse) */
+/* Only hide cursor inside fancy-cursor container */
 @media (pointer: fine)
 {
-  body { cursor: none; }
-  a, button { cursor: none; }
+  .fancy-cursor,
+  .fancy-cursor a,
+  .fancy-cursor button {
+    cursor: none;
+  }
 }
