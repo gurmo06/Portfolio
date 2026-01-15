@@ -41,7 +41,7 @@ export default function Link({ href, className = "", children, target, rel }: Pr
       rel = {rel}
       onPointerMove = {onMove}
       onPointerEnter = {onEnter}
-      style={{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
+      style = {{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
       className =
       {[
         "group relative overflow-hidden rounded-full border px-4 py-2 text-sm",

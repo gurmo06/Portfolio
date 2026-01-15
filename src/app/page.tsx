@@ -3,6 +3,7 @@
 /* Import necessary modules and components */
 import ProjectCard from "@/components/ProjectCard";
 import Link from "@/components/Link";
+import PageToggle from "@/components/PageToggle";
 
 /* Import biographical data from the bio.tsx module */
 import { name, title, location, email, about, links, projects } from "@/lib/Bio";
@@ -20,27 +21,33 @@ export default function Home()
             {name}
           </h1>
           <p className = "text-lg text-foreground">{title}</p>
+    
+          <div className = "pt-2 flex flex-wrap items-center justify-between gap-3">
+            {/* Links */}
+            <div className = "flex flex-wrap gap-3">
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : undefined}
-                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-              >
-                {link.label}
+              <Link href={`mailto:${email}`} className = "bg-foreground text-background hover:bg-foreground/90 border-transparent">
+                Email
               </Link>
-            ))}
+            </div>
 
-        <Link href={`mailto:${email}`} className="bg-foreground text-background hover:bg-foreground/90 border-transparent">
-          Email
-        </Link>
-      </div>
+            {/* Page Style Toggle */}
+            <PageToggle />
+          </div>
         </header>
 
         {/* About */}
-        <section className = "mt-14 space-y-3">
+        <section className = "mt-10 space-y-3">
           <h2 className = "text-xl font-semibold">About</h2>
           <p className = "text-foreground leading-relaxed">
             {about}
@@ -48,7 +55,7 @@ export default function Home()
         </section>
 
         {/* Projects */}
-        <section className = "mt-14 space-y-6">
+        <section className = "mt-12 space-y-6">
           {/*<div className = "flex items-end justify-between gap-4">
             <h2 className = "text-xl font-semibold">Projects</h2>
             <a
@@ -67,7 +74,7 @@ export default function Home()
                 href = {p.href}
                 target = {p.href.startsWith("http") ? "_blank" : undefined}
                 rel = {p.href.startsWith("http") ? "noreferrer" : undefined}
-                className={p.name === "This Portfolio!" ? "sm:col-span-2 group rounded-2xl border p-5" : "group rounded-2xl border p-5"}
+                className = {p.name === "This Portfolio!" ? "sm:col-span-2 group rounded-2xl border p-5" : "group rounded-2xl border p-5"}
               >
                 <div className = "flex items-start justify-between gap-4">
                   <h3 className = "text-base font-semibold text-foreground group-hover:text-muted-fg transition">{p.name}</h3>

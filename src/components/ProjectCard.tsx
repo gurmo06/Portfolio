@@ -41,7 +41,7 @@ export default function ProjectCard({ href, className = "", children, target, re
       rel = {rel}
       onPointerMove = {onMove}
       onPointerEnter = {onEnter}
-      style={{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
+      style = {{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
       className =
       {[
         "group relative overflow-hidden rounded-2xl border p-5",
