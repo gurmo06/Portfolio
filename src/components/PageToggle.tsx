@@ -7,9 +7,9 @@ import { useRef } from "react";
 
 export default function PageModeToggle()
 {
-  const ref = useRef<HTMLAnchorElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   
-  const onMove = (e: React.PointerEvent<HTMLAnchorElement>) =>
+  const onMove = (e: React.PointerEvent<HTMLDivElement>) =>
   {
     const el = ref.current;
     if (!el) return;
@@ -77,7 +77,7 @@ export default function PageModeToggle()
       <span
         className = 
         {[
-          "absolute inset-1 w-[calc(50%-0.25rem)] rounded-full bg-foreground transition-transform duration-200",
+          "pointer-events-none absolute inset-1 w-[calc(50%-0.25rem)] rounded-full bg-foreground transition-transform duration-200",
           isSimple ? "translate-x-full" : "translate-x-0",
         ].join(" ")}
       />
@@ -88,7 +88,8 @@ export default function PageModeToggle()
         onClick = {() => router.push("/")}
         className =
         {[
-          "relative z-10 flex-1 rounded-full px-3 text-xs font-medium transition",
+          "relative z-10 flex-1 h-full w-full rounded-full px-3",
+          "text-xs font-medium transition select-none flex items-center justify-center",
           !isSimple ? "text-background" : "text-foreground/70 hover:text-foreground",
         ].join(" ")}
         aria-pressed = {!isSimple}
@@ -102,7 +103,8 @@ export default function PageModeToggle()
         onClick = {() => router.push(simplePath)}
         className =
         {[
-          "relative z-10 flex-1 rounded-full px-3 text-xs font-medium transition",
+          "relative z-10 flex-1 h-full w-full rounded-full px-3",
+          "text-xs font-medium transition select-none flex items-center justify-center",
           isSimple ? "text-background" : "text-foreground/70 hover:text-foreground",
         ].join(" ")}
         aria-pressed = {isSimple}
