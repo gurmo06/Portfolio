@@ -57,7 +57,7 @@ export default function ProjectCard({ href, className = "", children, target, re
         style =
         {{
           background:
-            "radial-gradient(700px circle at var(--mx) var(--my), rgba(255,255,255,0.16), transparent 50%)",
+            "radial-gradient(400px circle at var(--mx) var(--my), rgba(255,255,255,0.16), transparent 50%)",
         }}
       />
 
