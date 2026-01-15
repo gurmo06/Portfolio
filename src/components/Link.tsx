@@ -1,4 +1,4 @@
-// /src/components/ProjectCard.tsx
+// /src/components/Link.tsx
 
 "use client";
 
@@ -13,7 +13,7 @@ type Props =
   rel?: string;
 };
 
-export default function ProjectCard({ href, className = "", children, target, rel }: Props)
+export default function Link({ href, className = "", children, target, rel }: Props)
 {
   const ref = useRef<HTMLAnchorElement>(null);
 
@@ -44,7 +44,7 @@ export default function ProjectCard({ href, className = "", children, target, re
       style={{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
       className =
       {[
-        "group relative overflow-hidden rounded-2xl border p-5",
+        "group relative overflow-hidden rounded-full border px-4 py-2 text-sm",
         "transition duration-200 hover:-translate-y-0.5",
         /* Background hover tint */
         "hover:bg-muted/50",
@@ -52,12 +52,12 @@ export default function ProjectCard({ href, className = "", children, target, re
       ].join(" ")}
     >
       {/* Subtle glow (following cursor) */}
-      <div
+      <span
         className = "pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
         style =
         {{
           background:
-            "radial-gradient(700px circle at var(--mx) var(--my), rgba(255,255,255,0.10), transparent 50%)",
+            "radial-gradient(150px circle at var(--mx) var(--my), rgba(255,255,255,0.14), transparent 50%)",
         }}
       />
 

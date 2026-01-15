@@ -2,6 +2,7 @@
 
 /* Import necessary modules and components */
 import ProjectCard from "@/components/ProjectCard";
+import Link from "@/components/Link";
 
 /* Import biographical data from the bio.tsx module */
 import { name, title, location, email, about, links, projects } from "@/lib/Bio";
@@ -20,26 +21,22 @@ export default function Home()
           </h1>
           <p className = "text-lg text-foreground">{title}</p>
 
-          <div className = "flex flex-wrap gap-3 pt-2">
-            {links.map((link) =>
-            (
-              <a
-                key = {link.label}
-                href = {link.href}
-                className = "rounded-full border px-4 py-2 text-sm hover:bg-muted-bg transition"
-                target = {link.href.startsWith("http") ? "_blank" : undefined}
-                rel = {link.href.startsWith("http") ? "noreferrer" : undefined}
+          <div className="flex flex-wrap gap-3 pt-2">
+            {links.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noreferrer" : undefined}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href = {`mailto:${email}`}
-              className = "rounded-full bg-foreground px-4 py-2 text-sm text-background hover:bg-muted-fg transition"
-            >
-              Email
-            </a>
-          </div>
+
+        <Link href={`mailto:${email}`} className="bg-foreground text-background hover:bg-foreground/90 border-transparent">
+          Email
+        </Link>
+      </div>
         </header>
 
         {/* About */}
