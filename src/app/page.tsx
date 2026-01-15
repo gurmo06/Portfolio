@@ -9,7 +9,7 @@ import { name, title, location, email, about, links, projects } from "@/lib/Bio"
 /* Main Page */
 export default function Home()
 {
-  return (
+  return(
     <main className = "min-h-screen bg-background text-foreground">
       <div className = "mx-auto max-w-4xl px-6 py-16">
         {/* Header */}

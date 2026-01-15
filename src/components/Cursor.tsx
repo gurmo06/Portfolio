@@ -37,7 +37,7 @@ export default function Cursor()
     window.addEventListener("mousemove", onMove);
     const raf = requestAnimationFrame(animate);
 
-    return () =>
+    return() =>
     {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);

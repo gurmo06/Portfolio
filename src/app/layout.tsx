@@ -25,7 +25,7 @@ export const metadata: Metadata =
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>)
 {
-  return (
+  return(
     <html lang = "en">
       <body className = {`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Cursor /> {/* Mount custom cursor */}
