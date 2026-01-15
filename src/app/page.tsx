@@ -116,7 +116,7 @@ export default function Home()
           </section>
 
           {/* Footer */}
-          <footer className = "mt-12 border-t pt-8 text-sm text-muted-foreground">
+          <footer className = "mt-10 border-t pt-6 text-sm text-muted-foreground">
             <p>
               © {new Date().getFullYear()} {name}. Built with Next.js.
             </p>

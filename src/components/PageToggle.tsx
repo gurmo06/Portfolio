@@ -30,41 +30,48 @@ export default function PageModeToggle()
 
   const simplePath = "/simple-no-effects";
   const isSimple = pathname?.startsWith(simplePath);
+  const effectsEnabled = !isSimple;
 
   return(
     <div
       ref={ref}
-      onPointerMove = {onMove}
-      onPointerEnter = {onEnter}
-      style = {{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
-      className ="
-        group relative inline-flex h-9 w-44 items-center rounded-full
-        overflow-hidden border border-foreground/25 bg-background/60 
-        backdrop-blur transition duration-200 hover:-translate-y-0.5
-      "
+      onPointerMove = {effectsEnabled ? onMove : undefined}
+      onPointerEnter = {effectsEnabled ? onEnter : undefined}
+      style = {effectsEnabled ? { ["--mx" as any]: "50%", ["--my" as any]: "50%" } : undefined}
+      className =
+      {[
+        "relative inline-flex h-10 w-50 items-center rounded-full overflow-hidden",
+        "border border-foreground/25 bg-background/60 backdrop-blur",
+        effectsEnabled ? "group transition duration-200 hover:-translate-y-0.5" : "",
+      ].join(" ")}
       aria-label = "Toggle site mode"
     >
 
-      {/* Cursor-following glow */}
-      <span
-        className = "pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
-        style = 
-        {{
-          background:
-            "radial-gradient(150px circle at var(--mx) var(--my), rgba(255,255,255,0.16), transparent 50%)",
-        }}
-      />
+      {/* Effects only when enabled */}
+      {effectsEnabled && (
+        <>
+          {/* Cursor-following glow */}
+          <span
+            className = "pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
+            style = 
+            {{
+            background:
+                "radial-gradient(150px circle at var(--mx) var(--my), rgba(255,255,255,0.16), transparent 50%)",
+            }}
+          />
 
-      {/* Sheen sweep */}
-      <span
-        className ="
-          pointer-events-none absolute -inset-x-20 -top-24 h-40 rotate-12
-          bg-foreground/5 blur-2xl
-          translate-x-[-35%] opacity-0
-          transition duration-300
-          group-hover:translate-x-[70%] group-hover:opacity-100
-        "
-      />
+          {/* Sheen sweep */}
+          <span
+            className ="
+            pointer-events-none absolute -inset-x-20 -top-24 h-40 rotate-12
+            bg-foreground/5 blur-2xl
+            translate-x-[-35%] opacity-0
+            transition duration-300
+            group-hover:translate-x-[70%] group-hover:opacity-100
+            "
+          />
+        </>
+      )}
 
       {/* Sliding indicator */}
       <span
@@ -86,7 +93,7 @@ export default function PageModeToggle()
         ].join(" ")}
         aria-pressed = {!isSimple}
       >
-        Fancy
+        Fancy Effects
       </button>
 
       {/* Right option */}
@@ -100,7 +107,7 @@ export default function PageModeToggle()
         ].join(" ")}
         aria-pressed = {isSimple}
       >
-        Simple
+        No Effects
       </button>
     </div>
   );
