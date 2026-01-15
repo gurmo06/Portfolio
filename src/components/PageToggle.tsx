@@ -23,7 +23,7 @@ export default function PageModeToggle()
     el.style.setProperty("--my", `${y}px`);
   };
   
-  const onEnter = (e: React.PointerEvent<HTMLAnchorElement>) => onMove(e);
+  const onEnter = (e: React.PointerEvent<HTMLDivElement>) => onMove(e);
 
   const pathname = usePathname();
   const router = useRouter();
