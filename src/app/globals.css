@@ -42,12 +42,23 @@ body
   display: none;
 }
 
-/* Only hide cursor inside fancy-cursor container */
+/* Hide system cursor for fine pointer devices */
 @media (pointer: fine)
 {
   .fancy-cursor,
   .fancy-cursor a,
-  .fancy-cursor button {
+  .fancy-cursor button
+  {
     cursor: none;
+  }
+}
+
+/* Hide fancy cursor for touch devices */
+@media (pointer: coarse)
+{
+  .cursor-dot,
+  .cursor-ring
+  {
+    display: none !important;
   }
 }
