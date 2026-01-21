@@ -2,7 +2,7 @@
 
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 type Props =
 {
@@ -12,6 +12,8 @@ type Props =
   target?: string;
   rel?: string;
 };
+
+const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
 
 export default function ProjectCard({ href, className = "", children, target, rel }: Props)
 {
@@ -32,6 +34,51 @@ export default function ProjectCard({ href, className = "", children, target, re
   };
 
   const onEnter = (e: React.PointerEvent<HTMLAnchorElement>) => onMove(e);
+
+  useEffect(() =>
+  {
+    const el = ref.current;
+    if (!el) return;
+
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    if (!coarse) return; /* Only do scroll-glow on mobile/touch*/
+
+    let raf = 0;
+
+    const update = () =>
+    {
+      const rect = el.getBoundingClientRect();
+
+      /* Put the glow X at the center of the card: */
+      const x = rect.width / 2;
+
+      /* Choose a "light source" Y in the viewport (try 35% down from top) */
+      const lightY = window.innerHeight * 0.35;
+
+      /* Convert that viewport Y into a y-position inside the card: */
+      const y = clamp(lightY - rect.top, 0, rect.height);
+
+      el.style.setProperty("--mx", `${x}px`);
+      el.style.setProperty("--my", `${y}px`);
+    };
+
+    const onScroll = () =>
+    {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () =>
+    {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return(
     <a
