@@ -53,7 +53,7 @@ export default function ProjectCard({ href, className = "", children, target, re
     >
       {/* Subtle glow (following cursor) */}
       <div
-        className = "pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
+        className = "glow-layer pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
         style =
         {{
           background:

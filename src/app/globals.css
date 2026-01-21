@@ -53,12 +53,18 @@ body
   }
 }
 
-/* Hide fancy cursor for touch devices */
 @media (pointer: coarse)
 {
+  /* Hide fancy cursor for touch devices */
   .cursor-dot,
   .cursor-ring
   {
     display: none !important;
+  }
+  /* Ensure glow effect always visible on touch devices */
+  .glow-layer
+  {
+    opacity: 1 !important;
+    transition: none !important;
   }
 }
