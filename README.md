@@ -1,35 +1,50 @@
 # Portfolio — Gurmohit Singh
 
-Personal portfolio website built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**.  
-Includes a **Fancy** mode (hover glow + sheen + custom cursor on desktop) and a **Simple** fallback mode (minimal/no effects).
+A personal portfolio website showcasing selected projects, experience, and links.
+
+- **Live site:** (add your URL here)
+- **Mode toggle:** Fancy ↔ Simple (accessible fallback)
 
 ---
 
-## Features
+## Highlights
 
-- **Two page modes**
-  - **Fancy** (`/`): premium project cards (cursor-following glow + sheen) + custom cursor (desktop)
-  - **Simple** (`/simple-no-effects`): high-clarity fallback layout with effects disabled
-- **Reusable UI components**
-  - `ProjectCard` for premium cards
-  - `Link` for glowing contact buttons
-  - `PageToggle` to switch between modes
-- **Content-driven**
-  - All portfolio content lives in `src/lib/Bio.tsx` (about, links, projects, etc.)
-- **Resume as a static asset**
-  - Serve PDF from `public/resume/...` and link as `/resume/...pdf`
+- **Fancy UI mode** with premium project cards:
+  - cursor-following glow + sheen on hover (desktop)
+  - subtle lift/hover transitions
+  - custom cursor (desktop only)
+- **Simple UI mode** for a clean, no-effects experience
+- Content is centralized and easy to update (projects/links/about)
 
 ---
 
-## Getting Started
+## Tech Stack
 
-First, run the development server:
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Pages
+
+- `/` — Fancy mode (effects enabled)
+- `/simple-no-effects` — Simple mode (effects disabled)
+
+---
+
+## Updating Content
+
+Portfolio content (about text, links, and project list) is defined in:
+
+- `src/lib/Bio.tsx`
+
+The resume is served as a static file from:
+
+- `public/resume/`
+
+---
+
+## License
+
+Licensed under the **GNU GPLv3**. See `LICENSE` for details.
