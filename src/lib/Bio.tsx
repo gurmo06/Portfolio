@@ -4,7 +4,7 @@ export const name = "Gurmohit Singh";
 export const title = "CS Student • Builder • Developer";
 export const location = "Austin, TX";
 export const email = "gurmo06@my.utexas.edu";
-export const about = "I'm a computer science student at the University of Texas at Austin, passionate about building software that makes a difference. I enjoy working on projects that challenge me to learn new technologies and improve my skills. When I'm not coding, I like to play games, read, tinker with hardware, and experiment with cooking.";
+export const about = "I'm a computer science student at the University of Texas at Austin, passionate about building software that makes a difference. I enjoy working on projects that challenge me to learn new technologies; I have a particular interest in low-level systems applications and scalable solutions, and I love tinkering with hardware too! When I'm not coding, I like to play games, read books, mess around with my car (I'd love to talk about cars as well!), and experiment with cooking.";
 
 export const links =
 [
