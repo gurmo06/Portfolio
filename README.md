@@ -1,4 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Gurmohit Singh
+
+Personal portfolio website built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**.  
+Includes a **Fancy** mode (hover glow + sheen + custom cursor on desktop) and a **Simple** fallback mode (minimal/no effects).
+
+---
+
+## Features
+
+- **Two page modes**
+  - **Fancy** (`/`): premium project cards (cursor-following glow + sheen) + custom cursor (desktop)
+  - **Simple** (`/simple-no-effects`): high-clarity fallback layout with effects disabled
+- **Reusable UI components**
+  - `ProjectCard` for premium cards
+  - `Link` for glowing contact buttons
+  - `PageToggle` to switch between modes
+- **Content-driven**
+  - All portfolio content lives in `src/lib/Bio.tsx` (about, links, projects, etc.)
+- **Resume as a static asset**
+  - Serve PDF from `public/resume/...` and link as `/resume/...pdf`
+
+---
 
 ## Getting Started
 
@@ -12,25 +33,3 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
