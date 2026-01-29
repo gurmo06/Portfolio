@@ -2,8 +2,8 @@
 
 A personal portfolio website showcasing selected projects, experience, and links.
 
-- **Live site:** (add your URL here)
-- **Mode toggle:** Fancy ↔ Simple (accessible fallback)
+- **Live site:** https://gurmo.vercel.app/
+- **Mode toggle:** Fancy ↔ Simple (no effects)
 
 ---
 
