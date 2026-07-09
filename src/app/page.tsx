@@ -89,12 +89,12 @@ export default function Home()
                   <p className = "mt-2 text-sm text-foreground leading-relaxed whitespace-pre-wrap group-hover:text-muted-fg transition">
                     {p.description}
                   </p>
-                  <div className = "mt-2 flex flex-wrap gap-2">
+                  <div className = "mt-2 flex flex-wrap gap-1.5">
                     {p.tech.map((t) =>
                     (
                       <span
                         key = {t}
-                        className = "rounded-full bg-muted px-3 py-1 text-xs text-foreground group-hover:text-muted-fg transition"
+                        className = "rounded-full bg-muted px-2 py-1 text-xs text-foreground group-hover:text-muted-fg transition"
                       >
                         {t}
                       </span>
