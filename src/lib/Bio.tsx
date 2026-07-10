@@ -19,19 +19,25 @@ export const projects =
     name: "Aviation Damage Risk Predictor",
     description: "• A machine learning pipeline for predicting aircraft damage risk from 307K+ aviation incident records.\n• Uses engineered features from incident metadata, text, missingness patterns, and domain-specific risk signals.\n• Evaluated LightGBM models with cross-validation, threshold tuning, and ablation testing; achieved 0.939 ROC-AUC.",
     tech: ["Python", "Pandas", "scikit-learn", "LightGBM", "NumPy"],
-    href: "https://tandoorish.com",
+    href: "https://colab.research.google.com/drive/1jdd_HggDw_HUZuFoYnVRprFe_ipkBWaX",
   },
   {
     name: "Energy-Efficient Graphics API Benchmark",
-    description: "• A GPU efficiency benchmark comparing Vulkan, Direct3D 12, and OpenGL across graphical workloads.\n• Collected FPS, benchmark scores, power, and thermal data across repeated trials.\n• Derived performance-per-watt metrics and found Vulkan delivered the strongest measured efficiency.",
+    description: "• A GPU efficiency benchmark comparing Vulkan, Direct3D 12, and OpenGL across graphical workloads.\n• Collected FPS, benchmark scores, power, and thermal data across repeated trials.\n• Derived performance-per-watt metrics and found Vulkan delivered the strongest measured efficiency.\n\n",
     tech: ["Vulkan", "Direct3D 12", "OpenGL", "GPU-Z"],
-    href: "https://github.com/gurmo06/System_Visualizer",
+    href: "https://drive.google.com/drive/folders/100RdI8gwuy1POOvWJe_-mHTs1zqBgQvl",
   },
   {
     name: "QARDS - THE Quantum Card Game",
     description: "• A digital card game with a unique twist involving quantum mechanics.\n• Incorporates superposition, entanglement, and constructive and destructive interference from a Grover diffusion operator.\n• Offers both a CLI and GUI version.\n• Won 2nd at the UT IBM Qiskit Fall Fest Hackathon 2025!",
     tech: ["Python", "Qiskit", "PySide6"],
     href: "https://github.com/gurmo06/QARDS",
+  },
+  {
+    name: "Cloud Scheduler Simulator",
+    description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies.\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.\n\n",
+    tech: ["C++", "Simulation", "Cloud Computing", "Scheduling"],
+    href: "https://github.com/CS378-EEC-Projects/Project-1-Cloud-Sim"
   },
   {
     name: "System Visualizer",
