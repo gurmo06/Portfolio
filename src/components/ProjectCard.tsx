@@ -112,7 +112,7 @@ export default function ProjectCard({ href, className = "", children, target, re
       <div className = "pointer-events-none absolute -inset-x-24 -top-24 h-40 rotate-12 bg-foreground/5 blur-2xl translate-x-[-35%] opacity-0 transition duration-300 group-hover:translate-x-[70%] group-hover:opacity-100" />
 
       {/* Content on top of overlays */}
-      <div className = "relative">{children}</div>
+      <div className = "relative flex h-full flex-col">{children}</div>
     </a>
   );
 }

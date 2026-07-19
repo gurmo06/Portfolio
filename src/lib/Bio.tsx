@@ -17,9 +17,15 @@ export const projects =
 [
   {
     name: "Aviation Damage Risk Predictor",
-    description: "• A machine learning pipeline for predicting aircraft damage risk from 307K+ aviation incident records.\n• Uses engineered features from incident metadata, text, missingness patterns, and domain-specific risk signals.\n• Evaluated LightGBM models with cross-validation, threshold tuning, and ablation testing; achieved 0.939 ROC-AUC.",
+    description: "• A machine learning pipeline for predicting aircraft damage risk from 307K+ aviation incident records.\n• Uses engineered features from incident metadata, text, missingness patterns, and domain-specific risk signals.\n• Evaluated LightGBM models with cross-validation, threshold tuning, and ablation; achieved 0.939 ROC-AUC.",
     tech: ["Python", "Pandas", "scikit-learn", "LightGBM", "NumPy"],
     href: "https://colab.research.google.com/drive/1jdd_HggDw_HUZuFoYnVRprFe_ipkBWaX",
+  },
+  {
+    name: "Pacman AI Project Suite",
+    description: "• A suite of AI agents spanning five Pacman-based projects over search, planning, learning, inference, & classification.\n• Implemented graph and adversarial search, value iteration, Q-learning, Bayes net inference, and supervised classifiers.\n• Applied these algorithms to maze navigation, multi-agent decision-making, reinforcement learning, probabilistic reasoning, and digit/Pacman behavior classification.",
+    tech: ["Python", "AI", "Search", "Reinforcement Learning", "Bayes Nets"],
+    href: "https://github.com/orgs/CS343-Projects/repositories",
   },
   {
     name: "Energy-Efficient Graphics API Benchmark",
@@ -35,14 +41,14 @@ export const projects =
   },
   {
     name: "Cloud Scheduler Simulator",
-    description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies.\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.\n\n",
+    description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies.\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.",
     tech: ["C++", "Simulation", "Cloud Computing", "Scheduling"],
     href: "https://github.com/CS378-EEC-Projects/Project-1-Cloud-Sim"
   },
   {
     name: "System Visualizer",
     description: "• An online visualization for different system components.\n• Includes simulations for CPU registers, ALU operations, cache memory, and pipelining.\n• Designed the codebase to be extensible; actively expanding modules (WIP).",
-    tech: ["TypeScript"],
+    tech: ["TypeScript", "Computer Architecture", "Low-level Simulation"],
     href: "https://github.com/gurmo06/System_Visualizer",
   },
   {

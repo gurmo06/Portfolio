@@ -78,7 +78,7 @@ export default function Home()
                   href = {p.href}
                   target = {p.href.startsWith("http") ? "_blank" : undefined}
                   rel = {p.href.startsWith("http") ? "noreferrer" : undefined}
-                  className = {p.name === "This Portfolio!" ? "sm:col-span-2 group rounded-2xl border p-5" : "group rounded-2xl border p-5"}
+                  className = "group flex flex-col rounded-2xl border p-5"
                 >
                   <div className = "flex items-start justify-between gap-4">
                     <h3 className = "text-base font-semibold text-foreground group-hover:text-muted-fg transition">{p.name}</h3>
@@ -89,12 +89,12 @@ export default function Home()
                   <p className = "mt-2 text-sm text-foreground leading-relaxed whitespace-pre-wrap group-hover:text-muted-fg transition">
                     {p.description}
                   </p>
-                  <div className = "mt-2 flex flex-wrap gap-1.5">
+                  <div className = {`mt-auto flex flex-wrap pt-5 gap-1`}>
                     {p.tech.map((t) =>
                     (
                       <span
                         key = {t}
-                        className = "rounded-full bg-muted px-2 py-1 text-xs text-foreground group-hover:text-muted-fg transition"
+                        className = {`rounded-full bg-muted py-1 text-xs text-foreground group-hover:text-muted-fg transition ${p.name === "Pacman AI Project Suite" ? "px-2" : "px-3"}`}
                       >
                         {t}
                       </span>
