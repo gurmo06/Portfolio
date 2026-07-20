@@ -78,13 +78,16 @@ export default function Home()
                   href = {p.href}
                   target = {p.href.startsWith("http") ? "_blank" : undefined}
                   rel = {p.href.startsWith("http") ? "noreferrer" : undefined}
-                  className = "group flex flex-col rounded-2xl border p-5"
+                  className = {`${p.href ? "group" : ""} flex flex-col rounded-2xl border p-5`}
                 >
                   <div className = "flex items-start justify-between gap-4">
                     <h3 className = "text-base font-semibold text-foreground group-hover:text-muted-fg transition">{p.name}</h3>
-                    <span className = "text-foreground group-hover:text-muted-fg transition">
-                      ↗
-                    </span>
+                    {p.href &&
+                    (
+                      <span className = "text-foreground group-hover:text-muted-fg transition">
+                        ↗
+                      </span>
+                    )}
                   </div>
                   <p className = "mt-2 text-sm text-foreground leading-relaxed whitespace-pre-wrap group-hover:text-muted-fg transition">
                     {p.description}

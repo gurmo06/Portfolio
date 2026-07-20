@@ -25,7 +25,7 @@ export const projects =
     name: "Pacman AI Project Suite",
     description: "• A suite of AI agents spanning five Pacman-based projects over search, planning, learning, inference, & classification.\n• Implemented graph and adversarial search, value iteration, Q-learning, Bayes net inference, and supervised classifiers.\n• Applied these algorithms to maze navigation, multi-agent decision-making, reinforcement learning, probabilistic reasoning, and digit/Pacman behavior classification.",
     tech: ["Python", "AI", "Search", "Reinforcement Learning", "Bayes Nets"],
-    href: "https://github.com/orgs/CS343-Projects/repositories",
+    href: "",
   },
   {
     name: "Energy-Efficient Graphics API Benchmark",
@@ -43,7 +43,7 @@ export const projects =
     name: "Cloud Scheduler Simulator",
     description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies.\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.",
     tech: ["C++", "Simulation", "Cloud Computing", "Scheduling"],
-    href: "https://github.com/CS378-EEC-Projects/Project-1-Cloud-Sim"
+    href: ""
   },
   {
     name: "System Visualizer",
