@@ -86,7 +86,7 @@ export default function ProjectCard({ href, className = "", children, target, re
   {
     return(
       <div
-        ref = {ref as React.RefObject<HTMLDivElement>}
+        ref = {(node) => { ref.current = node; }}
         onPointerMove = {onMove}
         onPointerEnter = {onEnter}
         style = {{ "--mx": "50%", "--my": "50%" } as CardStyle}
@@ -117,7 +117,7 @@ export default function ProjectCard({ href, className = "", children, target, re
 
   return(
     <a
-      ref = {ref}
+      ref = {(node) => { ref.current = node; }}
       href = {href}
       target = {target}
       rel = {rel}
