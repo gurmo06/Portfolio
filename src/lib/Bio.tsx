@@ -25,7 +25,7 @@ export const projects =
     name: "Pacman AI Project Suite",
     description: "• A suite of AI agents spanning five Pacman-based projects over search, planning, learning, inference, & classification.\n• Implemented graph and adversarial search, value iteration, Q-learning, Bayes net inference, and supervised classifiers.\n• Applied these algorithms to maze navigation, multi-agent decision-making, reinforcement learning, probabilistic reasoning, and digit/Pacman behavior classification.",
     tech: ["Python", "AI", "Search", "Reinforcement Learning", "Bayes Nets"],
-    href: "",
+    href: "https://drive.google.com/drive/folders/1iZRIvIJeyESbL4LKiRnY7ZMz05rISl-m",
   },
   {
     name: "Energy-Efficient Graphics API Benchmark",
@@ -34,22 +34,22 @@ export const projects =
     href: "https://drive.google.com/drive/folders/100RdI8gwuy1POOvWJe_-mHTs1zqBgQvl",
   },
   {
+    name: "System Visualizer",
+    description: "• An online visualization for different system components working together to form a simulated AArch64 system.\n• Includes low-level simulations for CPU registers, ALU operations, cache memory, and pipelining (WIP).\n• Features a web-based interface and a step by step execution pattern for ARM64 Assembly instructions.",
+    tech: ["TypeScript", "Computer Architecture", "Low-level Simulation"],
+    href: "https://github.com/gurmo06/System_Visualizer",
+  },
+  {
+    name: "Cloud Scheduler Simulator",
+    description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies (4 scheduling algorithms included).\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.",
+    tech: ["C++", "Simulation", "Cloud Computing", "Scheduling"],
+    href: "https://drive.google.com/drive/folders/1jhyUkaCjfSxWEj_45siOKOay2yzZKPHd"
+  },
+  {
     name: "QARDS - THE Quantum Card Game",
     description: "• A digital card game with a unique twist involving quantum mechanics.\n• Incorporates superposition, entanglement, and constructive and destructive interference from a Grover diffusion operator.\n• Offers both a CLI and GUI version.\n• Won 2nd at the UT IBM Qiskit Fall Fest Hackathon 2025!",
     tech: ["Python", "Qiskit", "PySide6"],
     href: "https://github.com/gurmo06/QARDS",
-  },
-  {
-    name: "Cloud Scheduler Simulator",
-    description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies.\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.",
-    tech: ["C++", "Simulation", "Cloud Computing", "Scheduling"],
-    href: ""
-  },
-  {
-    name: "System Visualizer",
-    description: "• An online visualization for different system components.\n• Includes simulations for CPU registers, ALU operations, cache memory, and pipelining.\n• Designed the codebase to be extensible; actively expanding modules (WIP).",
-    tech: ["TypeScript", "Computer Architecture", "Low-level Simulation"],
-    href: "https://github.com/gurmo06/System_Visualizer",
   },
   {
     name: "Tau",

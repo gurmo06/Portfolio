@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from "react";
 
 type Props =
 {
-  href?: string;
+  href: string;
   className?: string;
   children: React.ReactNode;
   target?: string;
@@ -14,14 +14,12 @@ type Props =
 };
 
 const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
-type CardStyle = React.CSSProperties & Record<"--mx" | "--my", string>;
 
 export default function ProjectCard({ href, className = "", children, target, rel }: Props)
 {
-  const ref = useRef<HTMLElement>(null);
-  const hasHref = Boolean(href);
+  const ref = useRef<HTMLAnchorElement>(null);
 
-  const onMove = (e: React.PointerEvent<HTMLElement>) =>
+  const onMove = (e: React.PointerEvent<HTMLAnchorElement>) =>
   {
     const el = ref.current;
     if (!el) return;
@@ -35,7 +33,7 @@ export default function ProjectCard({ href, className = "", children, target, re
     el.style.setProperty("--my", `${y}px`);
   };
 
-  const onEnter = (e: React.PointerEvent<HTMLElement>) => onMove(e);
+  const onEnter = (e: React.PointerEvent<HTMLAnchorElement>) => onMove(e);
 
   useEffect(() =>
   {
@@ -80,50 +78,17 @@ export default function ProjectCard({ href, className = "", children, target, re
       window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(raf);
     };
-  }, [hasHref]);
-
-  if (!hasHref)
-  {
-    return(
-      <div
-        ref = {(node) => { ref.current = node; }}
-        onPointerMove = {onMove}
-        onPointerEnter = {onEnter}
-        style = {{ "--mx": "50%", "--my": "50%" } as CardStyle}
-        className =
-        {[
-          "group relative overflow-hidden rounded-2xl border p-5",
-          "transition duration-200 hover:bg-muted/50",
-          className,
-        ].join(" ")}
-      >
-        {/* Subtle glow (following cursor) */}
-        <div
-          className = "glow-layer pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
-          style =
-          {{
-            background:
-              "radial-gradient(400px circle at var(--mx) var(--my), rgba(255,255,255,0.16), transparent 50%)",
-          }}
-        />
-
-        {/* Shine sweep */}
-        <div className = "pointer-events-none absolute -inset-x-24 -top-24 h-40 rotate-12 bg-foreground/5 blur-2xl translate-x-[-35%] opacity-0 transition duration-300 group-hover:translate-x-[70%] group-hover:opacity-100" />
-
-        <div className = "relative flex h-full flex-col">{children}</div>
-      </div>
-    );
-  }
+  }, []);
 
   return(
     <a
-      ref = {(node) => { ref.current = node; }}
+      ref = {ref}
       href = {href}
       target = {target}
       rel = {rel}
       onPointerMove = {onMove}
       onPointerEnter = {onEnter}
-      style = {{ "--mx": "50%", "--my": "50%" } as CardStyle}
+      style = {{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
       className =
       {[
         "group relative overflow-hidden rounded-2xl border p-5",
