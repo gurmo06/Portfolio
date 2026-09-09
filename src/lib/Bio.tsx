@@ -37,7 +37,7 @@ export const projects =
     name: "System Visualizer",
     description: "• An online visualization for different system components working together to form a simulated AArch64 system.\n• Includes low-level simulations for CPU registers, ALU operations, cache memory, and pipelining (WIP).\n• Features a web-based interface and a step by step execution pattern for ARM64 Assembly instructions.",
     tech: ["TypeScript", "Computer Architecture", "Low-level Simulation"],
-    href: "https://github.com/gurmo06/System_Visualizer",
+    href: "https://github.com/gurmo06/ARM_Visualizer",
   },
   {
     name: "Cloud Scheduler Simulator",
