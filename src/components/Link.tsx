@@ -4,6 +4,8 @@
 
 import React, { useRef } from "react";
 
+type LinkStyle = React.CSSProperties & Record<"--mx" | "--my", string>;
+
 type Props =
 {
   href: string;
@@ -41,10 +43,10 @@ export default function Link({ href, className = "", children, target, rel }: Pr
       rel = {rel}
       onPointerMove = {onMove}
       onPointerEnter = {onEnter}
-      style = {{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
+      style = {{ "--mx": "50%", "--my": "50%" } as LinkStyle}
       className =
       {[
-        "group relative overflow-hidden rounded-full border px-4 py-2 text-sm",
+        "group relative inline-flex items-center overflow-hidden rounded-full border px-4 py-2 text-sm",
         "transition duration-200 hover:-translate-y-0.5",
         /* Background hover tint */
         "hover:bg-muted/50",
@@ -65,7 +67,7 @@ export default function Link({ href, className = "", children, target, rel }: Pr
       <div className = "pointer-events-none absolute -inset-x-24 -top-24 h-40 rotate-12 bg-foreground/5 blur-2xl translate-x-[-35%] opacity-0 transition duration-300 group-hover:translate-x-[70%] group-hover:opacity-100" />
 
       {/* Content on top of overlays */}
-      <div className = "relative">{children}</div>
+      <span className = "relative">{children}</span>
     </a>
   );
 }

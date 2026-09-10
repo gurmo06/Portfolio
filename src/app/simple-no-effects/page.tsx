@@ -73,9 +73,7 @@ export default function Home()
             (
               <a
                 key = {p.name}
-                href = {p.href}
-                target = {p.href.startsWith("http") ? "_blank" : undefined}
-                rel = {p.href.startsWith("http") ? "noreferrer" : undefined}
+                href = {`/projects/${p.slug}`}
                 className = "group flex flex-col rounded-2xl border p-5"
               >
                 <div className = "flex items-start justify-between gap-4">
