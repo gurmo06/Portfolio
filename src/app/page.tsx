@@ -40,9 +40,6 @@ export default function Home()
                   Email
                 </Link>
               </div>
-
-              {/* Page Style Toggle */}
-              <PageToggle />
             </div>
           </header>
 
@@ -96,16 +93,6 @@ export default function Home()
                   </div>
                 </ProjectCard>
               ))}
-
-              {/* Timeline */}
-              {/*<a
-              href = "/timeline"
-              className = "rounded-2xl border p-5 flex items-center justify-center min-h-[180px] hover:bg-muted/50 transition"
-              >
-                  <h3 className = "text-4xl font-semibold text-foreground group-hover:text-muted-fg transition">
-                    My Timeline (WIP)
-                  </h3>
-              </a>*/}
             </div>
           </section>
 
