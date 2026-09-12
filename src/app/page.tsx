@@ -3,7 +3,6 @@
 /* Import necessary modules and components */
 import ProjectCard from "@/components/ProjectCard";
 import Link from "@/components/Link";
-import PageToggle from "@/components/PageToggle";
 
 /* Import biographical data from the bio.tsx module */
 import { name, title, location, email, about, links, projects } from "@/lib/Bio";
