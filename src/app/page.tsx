@@ -4,7 +4,6 @@
 import ProjectCard from "@/components/ProjectCard";
 import Link from "@/components/Link";
 import PageToggle from "@/components/PageToggle";
-import Cursor from "@/components/Cursor";
 
 /* Import biographical data from the bio.tsx module */
 import { name, title, location, email, about, links, projects } from "@/lib/Bio";
@@ -13,10 +12,7 @@ import { name, title, location, email, about, links, projects } from "@/lib/Bio"
 export default function Home()
 {
   return(
-    <div className = "fancy-cursor">
-      {/* Mount custom cursor */}
-      <Cursor />
-      <main className = "min-h-screen bg-background text-foreground">
+    <main className = "min-h-screen bg-background text-foreground">
         <div className = "mx-auto max-w-4xl px-6 py-16">
           {/* Header */}
           <header className = "space-y-4">
@@ -121,6 +117,5 @@ export default function Home()
           </footer>
         </div>
       </main>
-    </div>
   );
 }

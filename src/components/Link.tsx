@@ -2,6 +2,7 @@
 
 "use client";
 
+import NextLink from "next/link";
 import React, { useRef } from "react";
 
 type LinkStyle = React.CSSProperties & Record<"--mx" | "--my", string>;
@@ -18,6 +19,7 @@ type Props =
 export default function Link({ href, className = "", children, target, rel }: Props)
 {
   const ref = useRef<HTMLAnchorElement>(null);
+  const isInternalLink = href.startsWith("/");
 
   const onMove = (e: React.PointerEvent<HTMLAnchorElement>) =>
   {
@@ -35,24 +37,9 @@ export default function Link({ href, className = "", children, target, rel }: Pr
 
   const onEnter = (e: React.PointerEvent<HTMLAnchorElement>) => onMove(e);
 
-  return(
-    <a
-      ref = {ref}
-      href = {href}
-      target = {target}
-      rel = {rel}
-      onPointerMove = {onMove}
-      onPointerEnter = {onEnter}
-      style = {{ "--mx": "50%", "--my": "50%" } as LinkStyle}
-      className =
-      {[
-        "group relative inline-flex items-center overflow-hidden rounded-full border px-4 py-2 text-sm",
-        "transition duration-200 hover:-translate-y-0.5",
-        /* Background hover tint */
-        "hover:bg-muted/50",
-        className,
-      ].join(" ")}
-    >
+  const content =
+  (
+    <>
       {/* Subtle glow (following cursor) */}
       <span
         className = "pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
@@ -68,6 +55,46 @@ export default function Link({ href, className = "", children, target, rel }: Pr
 
       {/* Content on top of overlays */}
       <span className = "relative">{children}</span>
+    </>
+  );
+
+  const linkClassName =
+  [
+    "group relative inline-flex items-center overflow-hidden rounded-full border px-4 py-2 text-sm",
+    "transition duration-200 hover:-translate-y-0.5",
+    /* Background hover tint */
+    "hover:bg-muted/50",
+    className,
+  ].join(" ");
+
+  if (isInternalLink)
+  {
+    return(
+      <NextLink
+        ref = {ref}
+        href = {href}
+        onPointerMove = {onMove}
+        onPointerEnter = {onEnter}
+        style = {{ "--mx": "50%", "--my": "50%" } as LinkStyle}
+        className = {linkClassName}
+      >
+        {content}
+      </NextLink>
+    );
+  }
+
+  return(
+    <a
+      ref = {ref}
+      href = {href}
+      target = {target}
+      rel = {rel}
+      onPointerMove = {onMove}
+      onPointerEnter = {onEnter}
+      style = {{ "--mx": "50%", "--my": "50%" } as LinkStyle}
+      className = {linkClassName}
+    >
+      {content}
     </a>
   );
 }

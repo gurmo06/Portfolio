@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/Bio";
 import Link from "@/components/Link";
-import Cursor from "@/components/Cursor";
 
 type Props =
 {
@@ -40,9 +39,7 @@ export default async function ProjectPage({ params }: Props)
   }
 
   return(
-    <div className = "fancy-cursor">
-      <Cursor />
-      <main className = "min-h-screen bg-background text-foreground">
+    <main className = "min-h-screen bg-background text-foreground">
         <div className = "mx-auto max-w-4xl px-6 py-16">
           <Link href = "/">
             ← Back
@@ -90,6 +87,5 @@ export default async function ProjectPage({ params }: Props)
           </section>
         </div>
       </main>
-    </div>
   );
 }

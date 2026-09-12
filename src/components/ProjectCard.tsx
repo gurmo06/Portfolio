@@ -2,6 +2,7 @@
 
 "use client";
 
+import NextLink from "next/link";
 import React, { useEffect, useRef } from "react";
 
 type Props =
@@ -14,10 +15,12 @@ type Props =
 };
 
 const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
+type CardStyle = React.CSSProperties & Record<"--mx" | "--my", string>;
 
 export default function ProjectCard({ href, className = "", children, target, rel }: Props)
 {
   const ref = useRef<HTMLAnchorElement>(null);
+  const isInternalLink = href.startsWith("/");
 
   const onMove = (e: React.PointerEvent<HTMLAnchorElement>) =>
   {
@@ -80,24 +83,9 @@ export default function ProjectCard({ href, className = "", children, target, re
     };
   }, []);
 
-  return(
-    <a
-      ref = {ref}
-      href = {href}
-      target = {target}
-      rel = {rel}
-      onPointerMove = {onMove}
-      onPointerEnter = {onEnter}
-      style = {{ ["--mx" as any]: "50%", ["--my" as any]: "50%" }}
-      className =
-      {[
-        "group relative overflow-hidden rounded-2xl border p-5",
-        "transition duration-200 hover:-translate-y-0.5",
-        /* Background hover tint */
-        "hover:bg-muted/50",
-        className,
-      ].join(" ")}
-    >
+  const content =
+  (
+    <>
       {/* Subtle glow (following cursor) */}
       <div
         className = "glow-layer pointer-events-none absolute inset-0 opacity-0 transition duration-200 group-hover:opacity-100"
@@ -113,6 +101,46 @@ export default function ProjectCard({ href, className = "", children, target, re
 
       {/* Content on top of overlays */}
       <div className = "relative flex h-full flex-col">{children}</div>
+    </>
+  );
+
+  const linkClassName =
+  [
+    "group relative overflow-hidden rounded-2xl border p-5",
+    "transition duration-200 hover:-translate-y-0.5",
+    /* Background hover tint */
+    "hover:bg-muted/50",
+    className,
+  ].join(" ");
+
+  if (isInternalLink)
+  {
+    return(
+      <NextLink
+        ref = {ref}
+        href = {href}
+        onPointerMove = {onMove}
+        onPointerEnter = {onEnter}
+        style = {{ "--mx": "50%", "--my": "50%" } as CardStyle}
+        className = {linkClassName}
+      >
+        {content}
+      </NextLink>
+    );
+  }
+
+  return(
+    <a
+      ref = {ref}
+      href = {href}
+      target = {target}
+      rel = {rel}
+      onPointerMove = {onMove}
+      onPointerEnter = {onEnter}
+      style = {{ "--mx": "50%", "--my": "50%" } as CardStyle}
+      className = {linkClassName}
+    >
+      {content}
     </a>
   );
 }
