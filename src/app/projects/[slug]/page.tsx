@@ -76,7 +76,18 @@ export default async function ProjectPage({ params }: Props)
             >
               Source
             </Link>
+            {project.liveHref && (
+              <Link
+                href = {project.liveHref}
+                target = "_blank"
+                rel = "noreferrer"
+                className = "ml-4"
+              >
+                Live
+              </Link>
+            )}
           </div>
+          
         </section>
       </div>
     </main>
