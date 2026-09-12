@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/Bio";
 import Link from "@/components/Link";
+import Cursor from "@/components/Cursor";
 
 type Props =
 {
@@ -39,57 +40,56 @@ export default async function ProjectPage({ params }: Props)
   }
 
   return(
-    <main className = "min-h-screen bg-background text-foreground">
-      <div className = "mx-auto max-w-4xl px-6 py-16">
-        <a
-          href = "/"
-          className = "text-sm text-foreground transition hover:text-muted-fg"
-        >
-          ← Back
-        </a>
+    <div className = "fancy-cursor">
+      <Cursor />
+      <main className = "min-h-screen bg-background text-foreground">
+        <div className = "mx-auto max-w-4xl px-6 py-16">
+          <Link href = "/">
+            ← Back
+          </Link>
 
-        <section className = "mt-10 space-y-5">
-          <div className = "space-y-3">
-            <h1 className = "text-4xl font-bold tracking-tight">{project.name}</h1>
-            <p className = "whitespace-pre-wrap text-foreground leading-relaxed">
-              {project.description}
-            </p>
-          </div>
+          <section className = "mt-10 space-y-5">
+            <div className = "space-y-3">
+              <h1 className = "text-4xl font-bold tracking-tight">{project.name}</h1>
+              <p className = "whitespace-pre-wrap text-foreground leading-relaxed">
+                {project.description}
+              </p>
+            </div>
 
-          <div className = "flex flex-wrap gap-2">
-            {project.tech.map((tech) =>
-            (
-              <span
-                key = {tech}
-                className = "rounded-full bg-muted px-3 py-1 text-xs text-foreground"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+            <div className = "flex flex-wrap gap-2">
+              {project.tech.map((tech) =>
+              (
+                <span
+                  key = {tech}
+                  className = "rounded-full bg-muted px-3 py-1 text-xs text-foreground"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
 
-          <div className = "pt-2">
-            <Link
-              href = {project.sourceHref}
-              target = "_blank"
-              rel = "noreferrer"
-            >
-              Source
-            </Link>
-            {project.liveHref && (
+            <div className = "pt-2">
               <Link
-                href = {project.liveHref}
+                href = {project.sourceHref}
                 target = "_blank"
                 rel = "noreferrer"
-                className = "ml-4"
               >
-                Live
+                Source
               </Link>
-            )}
-          </div>
-          
-        </section>
-      </div>
-    </main>
+              {project.liveHref && (
+                <Link
+                  href = {project.liveHref}
+                  target = "_blank"
+                  rel = "noreferrer"
+                  className = "ml-4"
+                >
+                  Live
+                </Link>
+              )}
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
   );
 }
