@@ -5,7 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Link from "@/components/Link";
 
 /* Import biographical data from the bio.tsx module */
-import { name, title, location, email, about, links, projects } from "@/lib/Bio";
+import { name, title, location, email, about, links, projectLists } from "@/lib/Bio";
 
 /* Main Page */
 export default function Home()
@@ -51,46 +51,48 @@ export default function Home()
           </section>
 
           {/* Projects */}
-          <section className = "mt-8 space-y-6">
-            <div className = "flex items-end justify-between gap-4">
-              <h2 className = "text-3xl font-semibold">Projects</h2>
-              {/*<a
-                href = "/projects"
-                className = "text-sm text-foreground hover:text-muted-fg transition"
-              >
-                View all →
-              </a>*/}
-            </div>
+          <section className = "mt-8 space-y-6" aria-labelledby = "projects-heading">
+            <h2 id = "projects-heading" className = "text-3xl font-semibold">Projects</h2>
 
-            <div className = "grid gap-4 sm:grid-cols-2">
-              {projects.map((p) =>
+            <div className = "space-y-8">
+              {projectLists.map((list) =>
               (
-                <ProjectCard
-                  key = {p.name}
-                  href = {`/projects/${p.slug}`}
-                  className = "group flex flex-col rounded-2xl border p-5"
-                >
-                  <div className = "flex items-start justify-between gap-4">
-                    <h3 className = "text-base font-semibold text-foreground group-hover:text-muted-fg transition">{p.name}</h3>
-                    <span className = "text-foreground group-hover:text-muted-fg transition">
-                      ↗
-                    </span>
-                  </div>
-                  <p className = "mt-2 text-sm text-foreground leading-relaxed whitespace-pre-wrap group-hover:text-muted-fg transition">
-                    {p.description}
-                  </p>
-                  <div className = {`mt-auto flex flex-wrap pt-5 gap-1`}>
-                    {p.tech.map((t) =>
+                <section key = {list.name} aria-label = {list.name} className = "space-y-3">
+                  <h3 className = "border-b border-foreground/15 pb-2 text-xl font-semibold break-words">
+                    {list.name}
+                  </h3>
+                  <div className = "grid grid-cols-1 gap-3">
+                    {list.projects.map((p) =>
                     (
-                      <span
-                        key = {t}
-                        className = {`rounded-full bg-muted py-1 text-xs text-foreground group-hover:text-muted-fg transition ${p.name === "Pacman AI Project Suite" ? "px-2" : "px-3"}`}
+                      <ProjectCard
+                        key = {p.slug}
+                        href = {`/projects/${p.slug}`}
+                        className = "min-w-0"
                       >
-                        {t}
-                      </span>
+                        <div className = "flex items-start justify-between gap-4">
+                          <h4 className = "min-w-0 break-words text-base font-semibold text-foreground group-hover:text-muted-fg transition">{p.name}</h4>
+                          <span aria-hidden = "true" className = "shrink-0 text-foreground group-hover:text-muted-fg transition">
+                            ↗
+                          </span>
+                        </div>
+                        <p className = "mt-2 break-words text-sm text-foreground leading-relaxed whitespace-pre-wrap group-hover:text-muted-fg transition">
+                          {p.description.trim()}
+                        </p>
+                        <div className = "mt-4 flex flex-wrap gap-1">
+                          {p.tech.map((t) =>
+                          (
+                            <span
+                              key = {t}
+                              className = "max-w-full break-words rounded-full bg-muted px-3 py-1 text-xs text-foreground group-hover:text-muted-fg transition"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </ProjectCard>
                     ))}
                   </div>
-                </ProjectCard>
+                </section>
               ))}
             </div>
           </section>
