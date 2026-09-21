@@ -62,7 +62,7 @@ export const projectLists: ProjectList[] =
         slug: "arm-visualizer",
         name: "ARM Visualizer",
         description: "• An online visualization for different system components working together to form a simulated AArch64 system.\n• Includes low-level simulations for CPU registers, ALU operations, cache memory, and pipelining.\n• Features a web-based interface and a step by step execution pattern for ARM64 Assembly instructions.",
-        tech: ["TypeScript", "Computer Architecture", "Low-level Simulation", "PlayWright", "React", "Simulation"],
+        tech: ["TypeScript", "Computer Architecture", "Low-level Simulation", "PlayWright", "React", "Node.js", "Vite", "Tailwind CSS"],
         liveHref: "https://arm-visualizer.pages.dev/",
         sourceHref: "https://github.com/gurmo06/ARM_Visualizer",
       },
