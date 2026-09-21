@@ -105,6 +105,14 @@ export const projectLists: ProjectList[] =
         sourceHref: "https://github.com/gurmo06/3D-Physics-Simulator",
       },
       {
+        slug: "mac-switch-mods",
+        name: "Mac Switch Mods",
+        description: "• Nintendo Switch mods designed for the esoteric screen resolutions and aspedt ratios of Macs.\n• Used ARM Assembly tooling to engineer custom resolutions and 16:10 support.\n• Tested with the Astris Nintendo Switch Emularor.\n• You can email requests at macswitchmods@gmail.com",
+        tech: ["ARM Assembly", "Astris Emulator", "Reverse Engineering", "Modding"],
+        liveHref: null,
+        sourceHref: "https://github.com/gurmo06/Mac-Switch-Mods",
+      },
+      {
         slug: "2d-platformer",
         name: "2D Platformer (CS I K Final Project)",
         description: "• Built an interactive 2D platformer game with custom levels and mechanics.\n• Implemented player movement, jumping, collision detection, and a custom win condition.\n• Final project for my HS freshman CS I Honors class where it all started",
