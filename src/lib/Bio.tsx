@@ -85,7 +85,7 @@ export const projectLists: ProjectList[] =
     ],
   },
   {
-    name: "Games",
+    name: "Quantum Computing",
     projects:
     [
       {
@@ -96,6 +96,12 @@ export const projectLists: ProjectList[] =
         liveHref: null,
         sourceHref: "https://github.com/gurmo06/QARDS",
       },
+    ],
+  },
+  {
+    name: "Games",
+    projects:
+    [
       {
         slug: "3d-physics-simulator",
         name: "3D Physics Simulator",
