@@ -47,8 +47,8 @@ export default async function ProjectPage({ params }: Props)
 
           <section className = "mt-10 space-y-5">
             <div className = "space-y-3">
-              <h1 className = "text-4xl font-bold tracking-tight">{project.name}</h1>
-              <p className = "whitespace-pre-wrap text-foreground leading-relaxed">
+              <h1 className = "break-words text-4xl font-bold">{project.name}</h1>
+              <p className = "break-words whitespace-pre-wrap text-foreground leading-relaxed">
                 {project.description}
               </p>
             </div>
@@ -58,32 +58,38 @@ export default async function ProjectPage({ params }: Props)
               (
                 <span
                   key = {tech}
-                  className = "rounded-full bg-muted px-3 py-1 text-xs text-foreground"
+                  className = "max-w-full break-words rounded-full bg-muted px-3 py-1 text-xs text-foreground"
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            <div className = "pt-2">
-              <Link
-                href = {project.sourceHref}
-                target = "_blank"
-                rel = "noreferrer"
-              >
-                Source
-              </Link>
-              {project.liveHref && (
-                <Link
-                  href = {project.liveHref}
-                  target = "_blank"
-                  rel = "noreferrer"
-                  className = "ml-4"
-                >
-                  Live
-                </Link>
-              )}
-            </div>
+            {project.links.length > 0 && (
+              <div role = "group" aria-label = "Project links" className = "flex flex-wrap gap-3 pt-2">
+                {project.links.map((link) => link.href?.trim() ? (
+                  <Link
+                    key = {link.label}
+                    href = {link.href.trim()}
+                    target = {link.href.trim().startsWith("http") ? "_blank" : undefined}
+                    rel = {link.href.trim().startsWith("http") ? "noreferrer" : undefined}
+                    className = "max-w-full"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key = {link.label}
+                    type = "button"
+                    disabled
+                    title = "Link not added yet"
+                    className = "inline-flex max-w-full cursor-not-allowed items-center rounded-full border px-4 py-2 text-left text-sm text-muted-fg opacity-60"
+                  >
+                    <span className = "min-w-0 break-words">{link.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </section>
         </div>
       </main>

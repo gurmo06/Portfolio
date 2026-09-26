@@ -54,7 +54,7 @@ export default function Link({ href, className = "", children, target, rel }: Pr
       <div className = "pointer-events-none absolute -inset-x-24 -top-24 h-40 rotate-12 bg-foreground/5 blur-2xl translate-x-[-35%] opacity-0 transition duration-300 group-hover:translate-x-[70%] group-hover:opacity-100" />
 
       {/* Content on top of overlays */}
-      <span className = "relative">{children}</span>
+      <span className = "relative min-w-0 break-words">{children}</span>
     </>
   );
 
