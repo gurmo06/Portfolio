@@ -67,10 +67,10 @@ export const projectLists: ProjectList[] =
         tech: ["Python", "AI", "Search", "Reinforcement Learning", "Bayes Nets", "Neural Networks", "Classification"],
         links: [
           { label: "P1: Search - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-1-search" },
-          { label: "P2: Multi-Agent Search - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-2-multi-agent" },
+          { label: "P2: Multi-Agent - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-2-multi-agent" },
           { label: "P3: Reinforcement Learning - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-3-reinforcement-learning" },
-          { label: "P4: Inference - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-4-bayes-nets" },
-          { label: "P5: Machine Learning - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-5-classification" },
+          { label: "P4: Bayes Nets - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-4-bayes-nets" },
+          { label: "P5: Classification - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-5-classification" },
         ],
       },
     ],
