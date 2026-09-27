@@ -205,7 +205,7 @@ export const projectLists: ProjectList[] =
       {
         slug: "mac-switch-mods",
         name: "Mac Switch Mods",
-        description: "• Nintendo Switch mods for Mac screen resolutions and aspect ratios, tested with the Astris Nintendo Switch emulator.\n• Used ARM assembly tooling to implement custom resolutions and 16:10 support.\n• Accepts mod requests at macswitchmods@gmail.com.",
+        description: "• Nintendo Switch mods for Mac screen resolutions and aspect ratios, tested with the Astris Nintendo Switch emulator.\n• Used ARM assembly tooling to implement custom resolutions and 16:10 support.\n• Accepting mod requests at macswitchmods@gmail.com.",
         tech: ["ARM Assembly", "Astris Emulator", "Reverse Engineering", "Modding"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/Mac-Switch-Mods" },
