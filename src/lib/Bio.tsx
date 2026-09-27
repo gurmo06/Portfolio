@@ -46,7 +46,7 @@ export const projectLists: ProjectList[] =
         slug: "self-hosted-llm",
         name: "Self-Hosted LLM & Remote Assistants",
         description: "• Deployed gpt-oss:20b through Ollama on a headless Ubuntu PC with an NVIDIA RTX 5070 Ti for local model inference.\n• Connected OpenClaw and OpenCode to the model for remote assistant and coding workflows.\n• Made the OpenClaw assistant accessible through a Discord bot backed by the home-hosted model.",
-        tech: ["Ollama", "gpt-oss:20b", "OpenClaw", "OpenCode", "Ubuntu Linux", "NVIDIA RTX 5070 Ti", "Discord"],
+        tech: ["Ollama", "gpt-oss:20b", "OpenClaw", "OpenCode", "Discord", "Ubuntu Linux", "Self-hosting"],
         links: [
           { label: "Discord Server", href: null },
         ],
@@ -55,7 +55,7 @@ export const projectLists: ProjectList[] =
         slug: "aviation-damage-risk-predictor",
         name: "Aviation Damage Risk Predictor",
         description: "• A machine learning pipeline for predicting aircraft damage risk from 307K+ aviation incident records.\n• Uses engineered features from incident metadata, text, missingness patterns, and domain-specific risk signals.\n• Evaluated LightGBM models with cross-validation, threshold tuning, and ablation; achieved 0.939 ROC-AUC.",
-        tech: ["Python", "pandas", "scikit-learn", "LightGBM", "NumPy"],
+        tech: ["Python", "NumPy", "pandas", "scikit-learn", "LightGBM", "Decision Trees", "Machine Learning"],
         links: [
           { label: "Notebook", href: "https://colab.research.google.com/drive/1jdd_HggDw_HUZuFoYnVRprFe_ipkBWaX" },
         ],
@@ -83,7 +83,7 @@ export const projectLists: ProjectList[] =
         slug: "arm-visualizer",
         name: "ARM Visualizer",
         description: "• An online visualization of system components working together to form a simulated AArch64 system.\n• Models CPU registers, ALU operations, memory, and a five-stage instruction pipeline.\n• Features a web-based interface with step-by-step execution of ARM64 assembly instructions.",
-        tech: ["TypeScript", "AArch64 Assembly", "React", "Node.js", "Git", "Vite", "Tailwind CSS", "Playwright"],
+        tech: ["TypeScript", "AArch64 Assembly", "React", "Tailwind CSS", "Node.js", "Vite", "Playwright", "Git", "Computer Architecture"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/ARM_Visualizer" },
           { label: "Live", href: "https://arm-visualizer.pages.dev/" },
@@ -111,7 +111,7 @@ export const projectLists: ProjectList[] =
         slug: "energy-efficient-graphics-api-benchmark",
         name: "Energy-Efficient Graphics API Benchmark",
         description: "• A GPU efficiency benchmark comparing Vulkan, Direct3D 12, and OpenGL across graphical workloads.\n• Collected FPS, benchmark scores, power, and thermal data across repeated trials.\n• Derived performance-per-watt metrics and found Vulkan delivered the strongest measured efficiency.",
-        tech: ["Vulkan", "Direct3D 12", "OpenGL", "GPU-Z"],
+        tech: ["Vulkan", "Direct3D 12", "OpenGL", "GPU-Z", "Research"],
         links: [
           { label: "Project Materials", href: "https://drive.google.com/drive/folders/100RdI8gwuy1POOvWJe_-mHTs1zqBgQvl" },
           { label: "Final Presentation", href: "https://docs.google.com/presentation/d/1KMgr8faMLR5ugqFHvBPF5oRsZ7OuxTzBNbnGVdhQQqg/edit?usp=sharing" },
@@ -127,7 +127,7 @@ export const projectLists: ProjectList[] =
         slug: "pintos-operating-system",
         name: "Pintos Operating System",
         description: "• Implemented priority scheduling, nested priority donation, and timer-based thread sleeping, coordinating kernel threads with locks, semaphores, and condition variables.\n• Added user process execution and system calls with memory validation, then implemented demand paging, dynamic stack growth, page eviction, and disk swapping.\n• Extended the file system with dynamically growing files, direct and indirect block indexing, hierarchical directories, and synchronized access to shared file data.",
-        tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "Virtual Memory", "File Systems"],
+        tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "Multithreading", "Virtual Memory", "File Systems"],
         links: [
           { label: "P1: Threads - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-1-threads" },
           { label: "P2: User Programs - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-2-userprog" },
@@ -139,7 +139,7 @@ export const projectLists: ProjectList[] =
         slug: "unix-shell",
         name: "Unix Shell",
         description: "• Built a shell in C supporting interactive commands and script execution, with command parsing, configurable executable search paths, and built-in cd, exit, and path commands.\n• Implemented concurrent command execution using fork, execv, and waitpid, plus standard output and error redirection through dup2.",
-        tech: ["C", "Linux", "POSIX System Calls", "GCC", "GNU Make", "Git", "Process Coordination", "File Descriptor Management"],
+        tech: ["C", "POSIX System Calls", "Linux", "GCC", "GNU Make", "Git", "Process Coordination", "File Descriptor Management"],
         links: [
           { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/shell" },
         ],
@@ -172,7 +172,7 @@ export const projectLists: ProjectList[] =
         slug: "quantum-optics-research",
         name: "Quantum Optics Research",
         description: "• Studied polarization, quantum state tomography, teleportation, and entanglement swapping through simulated experiments in the Virtual Quantum Optics Laboratory (VQOL).\n• Built Python analysis scripts to reconstruct density matrices, check physical validity, calculate state fidelities, and visualize measurement results.\n• Presented a Bell-CHSH simulation study using photon coincidence counts to estimate correlations and statistical uncertainty.",
-        tech: ["Python", "VQOL", "NumPy", "pandas", "Matplotlib", "Quantum State Tomography"],
+        tech: ["Python", "NumPy", "pandas", "Matplotlib", "VQOL", "Quantum State Tomography", "Research"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/Quantum-Optics-Research" },
           { label: "Final Presentation", href: "https://docs.google.com/presentation/d/1VQfgdnCnXaquqAuGPdOxnp91c8-1cT3D1IGa4sb1UxA/edit?usp=sharing" },
@@ -182,7 +182,7 @@ export const projectLists: ProjectList[] =
         slug: "qards",
         name: "QARDS - THE Quantum Card Game",
         description: "• A digital card game with a unique twist involving quantum mechanics, available through CLI and GUI interfaces.\n• Incorporates superposition, entanglement, and constructive and destructive interference from a Grover diffusion operator.\n• Won 2nd at the UT IBM Qiskit Fall Fest Hackathon 2025!",
-        tech: ["Python", "Git", "Qiskit", "PySide6"],
+        tech: ["Python", "Qiskit", "PySide6", "Git", "Game Design"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/QARDS" },
         ],
@@ -197,7 +197,7 @@ export const projectLists: ProjectList[] =
         slug: "3d-physics-simulator",
         name: "3D Physics Simulator",
         description: "• Built an interactive 3D physics sandbox for exploring gravity, collisions, and attraction between objects.\n• Implemented customizable controls for sphere count, mass, elasticity, wind, gravity, and player push force with live readouts.\n• Built for TSA 2024; won 1st in regionals and placed in states.",
-        tech: ["Unity 2022", "C#", "Unity Rigidbody Physics", "HDRP", "Cinemachine"],
+        tech: ["C#", "Unity 2022", "Unity Rigidbody Physics", "HDRP", "Cinemachine", "Game Design"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/3D-Physics-Simulator" },
         ],
@@ -215,7 +215,7 @@ export const projectLists: ProjectList[] =
         slug: "2d-platformer",
         name: "2D Platformer (CS I K Final Project)",
         description: "• Built an interactive 2D platformer game with custom levels and mechanics.\n• Implemented player movement, jumping, collision detection, and a custom win condition.\n• Final project for my HS freshman CS I Honors class, where it all started.",
-        tech: ["Unity 2020", "C#", "URP"],
+        tech: ["C#", "Unity 2020", "URP", "Game Design"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/Final-Project-CS-I-K-2D-Platformer" },
         ],
@@ -239,7 +239,7 @@ export const projectLists: ProjectList[] =
         slug: "self-hosted-gitea",
         name: "Self-Hosted Gitea Server",
         description: "• Deployed Gitea on a headless Ubuntu home server to host and manage Git repositories.\n• Configured SSH-based Git access and Tailscale connectivity for remote use.\n• Runs alongside Jellyfin, Home Assistant, Syncthing, Mosquitto, and other applications on the home server.",
-        tech: ["Gitea", "Git", "SSH", "Ubuntu Linux", "Tailscale", "Jellyfin", "Home Assistant", "Syncthing", "Mosquitto", "Self-Hosting"],
+        tech: ["Gitea", "Jellyfin", "Home Assistant", "Syncthing", "Mosquitto", "Ubuntu Linux", "SSH", "Tailscale", "Git", "Self-Hosting"],
         links: [
           { label: "Gitea Server", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo" },
         ],
@@ -254,7 +254,7 @@ export const projectLists: ProjectList[] =
         slug: "tau",
         name: "Tau",
         description: "• A simple Discord bot with various math functions.\n• Will be expanded with matrix calculations and calculus functions.\n• Currently offline (was previously hosted on Railway but trial ended).",
-        tech: ["Python", "Git", "Discord API", "NumPy", "SymPy", "Railway"],
+        tech: ["Python", "Discord API", "NumPy", "SymPy", "Railway", "Git"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/Tau_Python" },
         ],
@@ -263,7 +263,7 @@ export const projectLists: ProjectList[] =
         slug: "portfolio",
         name: "This Portfolio!",
         description: "• A personal portfolio website to showcase my projects and skills.\n• Features sections for about me, projects, and contact information.\n• Should be up if you're looking at it :)",
-        tech: ["TypeScript", "Next.js", "React", "Git", "Tailwind CSS", "Node.js"],
+        tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Node.js", "Git"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/Portfolio" },
           { label: "Live", href: "https://gurmo.vercel.app/" },
