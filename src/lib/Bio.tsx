@@ -35,7 +35,7 @@ export type ProjectList =
   projects: Project[];
 };
 
-// Add another named list here to create a new homepage section.
+
 export const projectLists: ProjectList[] =
 [
   {
@@ -83,7 +83,7 @@ export const projectLists: ProjectList[] =
         slug: "arm-visualizer",
         name: "ARM Visualizer",
         description: "• An online visualization of system components working together to form a simulated AArch64 system.\n• Models CPU registers, ALU operations, memory, and a five-stage instruction pipeline.\n• Features a web-based interface with step-by-step execution of ARM64 assembly instructions.",
-        tech: ["TypeScript", "Computer Architecture", "Low-level Simulation", "Playwright", "React", "Node.js", "Vite", "Tailwind CSS"],
+        tech: ["TypeScript", "ARM/AArch64 Assembly", "Computer Architecture", "Low-level Simulation", "Playwright", "React", "Node.js", "Vite", "Tailwind CSS"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/ARM_Visualizer" },
           { label: "Live", href: "https://arm-visualizer.pages.dev/" },
@@ -102,7 +102,7 @@ export const projectLists: ProjectList[] =
         slug: "pipelined-processor-emulator",
         name: "Pipelined Processor Emulator",
         description: "• Implemented a five-stage ARM processor pipeline in C, covering instruction fetch, decode, execution, memory access, and register writeback.\n• Added register forwarding, pipeline stalls, and bubbles to handle data dependencies, load-use hazards, and branch mispredictions.\n• Built a configurable set-associative data cache with LRU replacement, dirty-block tracking, and cache-miss stalls integrated into pipeline execution.",
-        tech: ["C", "ARM/AArch64", "GCC", "GNU Make", "Git", "Computer Architecture", "Processor Emulation", "Instruction Decoding", "Pipeline Hazards", "Cache Design", "Memory Hierarchy"],
+        tech: ["C", "ARM/AArch64 Assembly", "GCC", "GNU Make", "Git", "Computer Architecture", "Processor Emulation", "Instruction Decoding", "Pipeline Hazards", "Cache Design", "Memory Hierarchy"],
         links: [
           { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/se-lab-gurmo" },
         ],
@@ -206,7 +206,7 @@ export const projectLists: ProjectList[] =
         slug: "mac-switch-mods",
         name: "Mac Switch Mods",
         description: "• Nintendo Switch mods for Mac screen resolutions and aspect ratios, tested with the Astris Nintendo Switch emulator.\n• Used ARM assembly tooling to implement custom resolutions and 16:10 support.\n• Accepting mod requests at macswitchmods@gmail.com.",
-        tech: ["ARM Assembly", "Astris Emulator", "Reverse Engineering", "Modding"],
+        tech: ["ARM/AArch64 Assembly", "Astris Emulator", "Reverse Engineering", "Modding"],
         links: [
           { label: "Source", href: "https://github.com/gurmo06/Mac-Switch-Mods" },
         ],
