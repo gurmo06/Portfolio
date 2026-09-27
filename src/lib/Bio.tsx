@@ -76,7 +76,7 @@ export const projectLists: ProjectList[] =
     ],
   },
   {
-    name: "Systems",
+    name: "Computer Architecture",
     projects:
     [
       {
@@ -89,6 +89,39 @@ export const projectLists: ProjectList[] =
           { label: "Live", href: "https://arm-visualizer.pages.dev/" },
         ],
       },
+      {
+        slug: "arm-assembly-programming",
+        name: "ARM Assembly Programming",
+        description: "• Implemented six AArch64 assembly routines covering Hamming distance, bit-matrix transposition, structure comparison, string case conversion, tree depth, and Hamming-code decoding.\n• Used bit masks, shifts, and logical operations to manipulate packed data and implement single-bit error correction.\n• Implemented recursive tree traversal and nested function calls with explicit stack frames and register preservation.",
+        tech: ["ARM64/AArch64 Assembly", "GCC", "GNU Make", "Python", "Bit Manipulation", "Recursion", "Stack Management", "Data Layout", "Calling Conventions"],
+        links: [
+          { label: "Source", href: null },
+        ],
+      },
+      {
+        slug: "pipelined-processor-emulator",
+        name: "Pipelined Processor Emulator",
+        description: "• Implemented a five-stage ARM processor pipeline in C, covering instruction fetch, decode, execution, memory access, and register writeback.\n• Added register forwarding, pipeline stalls, and bubbles to handle data dependencies, load-use hazards, and branch mispredictions.\n• Built a configurable set-associative data cache with LRU replacement, dirty-block tracking, and cache-miss stalls integrated into pipeline execution.",
+        tech: ["C", "ARM/AArch64", "GCC", "GNU Make", "Git", "Computer Architecture", "Processor Emulation", "Instruction Decoding", "Pipeline Hazards", "Cache Design", "Memory Hierarchy"],
+        links: [
+          { label: "Source", href: null },
+        ],
+      },
+      {
+        slug: "energy-efficient-graphics-api-benchmark",
+        name: "Energy-Efficient Graphics API Benchmark",
+        description: "• A GPU efficiency benchmark comparing Vulkan, Direct3D 12, and OpenGL across graphical workloads.\n• Collected FPS, benchmark scores, power, and thermal data across repeated trials.\n• Derived performance-per-watt metrics and found Vulkan delivered the strongest measured efficiency.",
+        tech: ["Vulkan", "Direct3D 12", "OpenGL", "GPU-Z"],
+        links: [
+          { label: "Project Materials", href: "https://drive.google.com/drive/folders/100RdI8gwuy1POOvWJe_-mHTs1zqBgQvl" },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Systems Programming",
+    projects:
+    [
       {
         slug: "pintos-operating-system",
         name: "Pintos Operating System",
@@ -126,42 +159,6 @@ export const projectLists: ProjectList[] =
         tech: ["C", "GCC", "GNU Make", "Git", "Memory Allocation", "Pointer Arithmetic", "Bitwise Metadata Encoding", "Data Structures", "Heap Debugging"],
         links: [
           { label: "Source", href: null },
-        ],
-      },
-      {
-        slug: "arm-assembly-programming",
-        name: "ARM Assembly Programming",
-        description: "• Implemented six AArch64 assembly routines covering Hamming distance, bit-matrix transposition, structure comparison, string case conversion, tree depth, and Hamming-code decoding.\n• Used bit masks, shifts, and logical operations to manipulate packed data and implement single-bit error correction.\n• Implemented recursive tree traversal and nested function calls with explicit stack frames and register preservation.",
-        tech: ["ARM64/AArch64 Assembly", "GCC", "GNU Make", "Python", "Bit Manipulation", "Recursion", "Stack Management", "Data Layout", "Calling Conventions"],
-        links: [
-          { label: "Source", href: null },
-        ],
-      },
-      {
-        slug: "pipelined-processor-emulator",
-        name: "Pipelined Processor Emulator",
-        description: "• Implemented a five-stage ARM processor pipeline in C, covering instruction fetch, decode, execution, memory access, and register writeback.\n• Added register forwarding, pipeline stalls, and bubbles to handle data dependencies, load-use hazards, and branch mispredictions.\n• Built a configurable set-associative data cache with LRU replacement, dirty-block tracking, and cache-miss stalls integrated into pipeline execution.",
-        tech: ["C", "ARM/AArch64", "GCC", "GNU Make", "Git", "Computer Architecture", "Processor Emulation", "Instruction Decoding", "Pipeline Hazards", "Cache Design", "Memory Hierarchy"],
-        links: [
-          { label: "Source", href: null },
-        ],
-      },
-      {
-        slug: "cloud-scheduler-simulator",
-        name: "Cloud Scheduler Simulator",
-        description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies (4 scheduling algorithms included).\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.",
-        tech: ["C++", "Simulation", "Cloud Computing"],
-        links: [
-          { label: "Source", href: "https://drive.google.com/drive/folders/1jhyUkaCjfSxWEj_45siOKOay2yzZKPHd" },
-        ],
-      },
-      {
-        slug: "energy-efficient-graphics-api-benchmark",
-        name: "Energy-Efficient Graphics API Benchmark",
-        description: "• A GPU efficiency benchmark comparing Vulkan, Direct3D 12, and OpenGL across graphical workloads.\n• Collected FPS, benchmark scores, power, and thermal data across repeated trials.\n• Derived performance-per-watt metrics and found Vulkan delivered the strongest measured efficiency.",
-        tech: ["Vulkan", "Direct3D 12", "OpenGL", "GPU-Z"],
-        links: [
-          { label: "Project Materials", href: "https://drive.google.com/drive/folders/100RdI8gwuy1POOvWJe_-mHTs1zqBgQvl" },
         ],
       },
     ],
@@ -225,9 +222,18 @@ export const projectLists: ProjectList[] =
     ],
   },
   {
-    name: "Infrastructure",
+    name: "Cloud & Infrastructure",
     projects:
     [
+      {
+        slug: "cloud-scheduler-simulator",
+        name: "Cloud Scheduler Simulator",
+        description: "• A cloud simulation project for modeling virtual machines, task scheduling, and distributed resource usage.\n• Evaluates workload execution across configurable cloud environments and allocation strategies (4 scheduling algorithms included).\n• Used to compare scheduling efficiency, resource utilization, and overall system performance.",
+        tech: ["C++", "Simulation", "Cloud Computing"],
+        links: [
+          { label: "Source", href: "https://drive.google.com/drive/folders/1jhyUkaCjfSxWEj_45siOKOay2yzZKPHd" },
+        ],
+      },
       {
         slug: "self-hosted-gitea",
         name: "Self-Hosted Gitea Server",

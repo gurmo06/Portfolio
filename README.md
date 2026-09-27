@@ -13,7 +13,7 @@ A personal portfolio website for showcasing selected software, systems, AI, and 
 - Responsive portfolio homepage with About, links, resume access, email contact, and project cards.
 - Animated project cards with cursor-following glow, hover sheen, and subtle lift effects.
 - Centralized profile, link, and project data in `src/lib/Bio.tsx`.
-- Full-width project cards grouped into AI/ML, Systems, Quantum Computing, Games, Infrastructure, and Miscellaneous sections.
+- Full-width project cards grouped into AI/ML, Computer Architecture, Systems Programming, Quantum Computing, Games, Cloud & Infrastructure, and Miscellaneous sections.
 - Dynamic project routes at `/projects/[slug]`.
 - Static generation for all project slugs from the project list.
 - Per-project metadata generated from each project name and description.
