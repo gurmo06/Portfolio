@@ -27,6 +27,7 @@ export type Project =
   description: string;
   tech: string[];
   links: ProjectLink[];
+  children?: Project[];
 };
 
 export type ProjectList =
@@ -39,7 +40,7 @@ export type ProjectList =
 export const projectLists: ProjectList[] =
 [
   {
-    name: "AI/ML",
+    name: "AI & ML",
     projects:
     [
       {
@@ -65,20 +66,173 @@ export const projectLists: ProjectList[] =
         name: "Pacman AI Project Suite",
         description: "• A suite of AI agents spanning five Pacman-based projects over search, planning, learning, inference, & classification.\n• Implemented graph and adversarial search, value iteration, Q-learning, Bayes net inference, and supervised classifiers.\n• Applied these algorithms to maze navigation, multi-agent decision-making, reinforcement learning, probabilistic reasoning, and digit/Pacman behavior classification.",
         tech: ["Python", "Git", "Reinforcement Learning", "Bayesian Networks", "Classification"],
-        links: [
-          { label: "P1: Search - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-1-search" },
-          { label: "P2: Multi-Agent - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-2-multi-agent" },
-          { label: "P3: Reinforcement Learning - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-3-reinforcement-learning" },
-          { label: "P4: Bayes Nets - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-4-bayes-nets" },
-          { label: "P5: Classification - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-5-classification" },
+        links: [],
+        children:
+        [
+          {
+            slug: "pacman-search",
+            name: "Project 1 - Search",
+            description: "• Implemented graph search agents for navigating Pacman mazes.\n• Used search-based planning to find paths through the maze.",
+            tech: ["Python", "Git", "Search"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-1-search" },
+            ],
+          },
+          {
+            slug: "pacman-multi-agent",
+            name: "Project 2 - Multi-Agent Systems",
+            description: "• Implemented adversarial search for Pacman in a multi-agent environment.\n• Planned actions while accounting for other agents' decisions.",
+            tech: ["Python", "Git", "Adversarial Search"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-2-multi-agent" },
+            ],
+          },
+          {
+            slug: "pacman-reinforcement-learning",
+            name: "Project 3 - Reinforcement Learning",
+            description: "• Implemented value iteration and Q-learning for sequential decision-making.\n• Applied reinforcement learning to learn policies for Pacman environments.",
+            tech: ["Python", "Git", "Reinforcement Learning"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-3-reinforcement-learning" },
+            ],
+          },
+          {
+            slug: "pacman-bayesian-networks",
+            name: "Project 4 - Bayesian Networks",
+            description: "• Implemented inference in Bayesian networks for probabilistic reasoning.\n• Applied inference to reasoning about uncertain states in Pacman environments.",
+            tech: ["Python", "Git", "Bayesian Networks"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-4-bayes-nets" },
+            ],
+          },
+          {
+            slug: "pacman-classification",
+            name: "Project 5 - Classification",
+            description: "• Implemented supervised classifiers for digit recognition and Pacman behavior classification.\n• Applied learned models to classify inputs from labeled examples.",
+            tech: ["Python", "Git", "Classification"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/Project-5-classification" },
+            ],
+          },
         ],
       },
     ],
   },
   {
-    name: "Computer Architecture",
+    name: "Systems & Architecture",
     projects:
     [
+      {
+        slug: "computer-architecture-project-suite",
+        name: "Computer Architecture Project Suite",
+        description: "• Four projects exploring instruction execution, memory allocation, assembly programming, and processor design.\n• Built a command interpreter and memory allocator, and implemented AArch64 assembly routines.\n• Developed a five-stage processor emulator with pipeline hazard handling and a configurable data cache.",
+        tech: ["C", "AArch64 Assembly", "Python", "GCC", "GNU Make", "Git", "Memory Allocation", "Cache Design"],
+        links: [],
+        children:
+        [
+          {
+            slug: "command-interpreter",
+            name: "Command Interpreter",
+            description: "• Built a parser and interpreter in C for an assembly-like language supporting arithmetic, bitwise operations, comparisons, and memory access.\n• Implemented conditional branching and label resolution using a hash table to support loops and program control flow.\n• Added function calls and returns using a stack to preserve execution state and restore variables.",
+            tech: ["C", "GCC", "GNU Make", "Git", "Language Interpretation", "Parsing"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/ci-lab-gurmo06" },
+            ],
+          },
+          {
+            slug: "dynamic-memory-allocator",
+            name: "Dynamic Memory Allocator",
+            description: "• Built a custom memory allocator in C with allocation and deallocation routines backed by six size-segregated free lists.\n• Implemented block splitting, adjacent free-block coalescing, and page-aligned heap expansion to reuse memory and manage fragmentation.\n• Developed a heap consistency checker to detect overlapping blocks, alignment violations, incorrect free-list ordering, and allocation-state errors.",
+            tech: ["C", "GCC", "GNU Make", "Git", "Memory Allocation", "Heap Debugging"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/mm-lab-gurmo06" },
+            ],
+          },
+          {
+            slug: "arm-assembly-programming",
+            name: "ARM Assembly Programming",
+            description: "• Implemented six AArch64 assembly routines covering Hamming distance, bit-matrix transposition, structure comparison, string case conversion, tree depth, and Hamming-code decoding.\n• Used bit masks, shifts, and logical operations to manipulate packed data and implement single-bit error correction.\n• Implemented recursive tree traversal and nested function calls with explicit stack frames and register preservation.",
+            tech: ["AArch64 Assembly", "Python", "GCC", "GNU Make", "Bit Manipulation", "Stack Management"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/ac-lab-gurmo06" },
+            ],
+          },
+          {
+            slug: "pipelined-processor-emulator",
+            name: "Pipelined Processor Emulator",
+            description: "• Implemented a five-stage ARM processor pipeline in C, covering instruction fetch, decode, execution, memory access, and register writeback.\n• Added register forwarding, pipeline stalls, and bubbles to handle data dependencies, load-use hazards, and branch mispredictions.\n• Built a configurable set-associative data cache with LRU replacement, dirty-block tracking, and cache-miss stalls integrated into pipeline execution.",
+            tech: ["C", "AArch64 Assembly", "GCC", "GNU Make", "Git", "Pipeline Hazards", "Cache Design"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/se-lab-gurmo" },
+            ],
+          },
+        ],
+      },
+      {
+        slug: "operating-systems-project-suite",
+        name: "Operating Systems Project Suite",
+        description: "• Systems projects spanning a Unix shell and four stages of Pintos kernel development.\n• Built command execution and redirection, then implemented thread scheduling and user process support.\n• Extended Pintos with virtual memory, disk swapping, and a hierarchical file system.",
+        tech: ["C", "Pintos", "POSIX System Calls", "Linux", "x86", "GCC", "GNU Make", "Git", "Virtual Memory", "File Systems"],
+        links: [],
+        children:
+        [
+          {
+            slug: "unix-shell",
+            name: "Unix Shell",
+            description: "• Built a shell in C supporting interactive commands and script execution, with command parsing, configurable executable search paths, and built-in cd, exit, and path commands.\n• Implemented concurrent command execution using fork, execv, and waitpid, plus standard output and error redirection through dup2.",
+            tech: ["C", "POSIX System Calls", "Linux", "GCC", "GNU Make", "Git", "Process Coordination", "File Descriptor Management"],
+            links: [
+              { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/shell" },
+            ],
+          },
+          {
+            slug: "pintos-operating-system",
+            name: "Pintos Operating System",
+            description: "• Implemented priority scheduling, nested priority donation, and timer-based thread sleeping, coordinating kernel threads with locks, semaphores, and condition variables.\n• Added user process execution and system calls with memory validation, then implemented demand paging, dynamic stack growth, page eviction, and disk swapping.\n• Extended the file system with dynamically growing files, direct and indirect block indexing, hierarchical directories, and synchronized access to shared file data.",
+            tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "Multithreading", "Virtual Memory", "File Systems"],
+            links: [],
+            children:
+            [
+              {
+                slug: "pintos-threads",
+                name: "Pintos 1 - Threads",
+                description: "• Implemented priority scheduling, nested priority donation, and timer-based thread sleeping.\n• Coordinated kernel threads with locks, semaphores, and condition variables.",
+                tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "Multithreading"],
+                links: [
+                  { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-1-threads" },
+                ],
+              },
+              {
+                slug: "pintos-user-programs",
+                name: "Pintos 2 - User Programs",
+                description: "• Added user process execution and system calls to Pintos.\n• Validated user memory before accessing it from the kernel.",
+                tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "Process Management"],
+                links: [
+                  { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-2-userprog" },
+                ],
+              },
+              {
+                slug: "pintos-virtual-memory",
+                name: "Pintos 3 - Virtual Memory",
+                description: "• Implemented demand paging and dynamic stack growth for user processes.\n• Added page eviction and disk swapping to manage physical memory.",
+                tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "Virtual Memory"],
+                links: [
+                  { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-3-vm" },
+                ],
+              },
+              {
+                slug: "pintos-file-systems",
+                name: "Pintos 4 - File Systems",
+                description: "• Extended the file system with dynamically growing files, direct and indirect block indexing, and hierarchical directories.\n• Synchronized access to shared file data.",
+                tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "File Systems"],
+                links: [
+                  { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-4-filesys" },
+                ],
+              },
+            ],
+          },
+        ],
+      },
       {
         slug: "arm-visualizer",
         name: "ARM Visualizer",
@@ -90,24 +244,6 @@ export const projectLists: ProjectList[] =
         ],
       },
       {
-        slug: "arm-assembly-programming",
-        name: "ARM Assembly Programming",
-        description: "• Implemented six AArch64 assembly routines covering Hamming distance, bit-matrix transposition, structure comparison, string case conversion, tree depth, and Hamming-code decoding.\n• Used bit masks, shifts, and logical operations to manipulate packed data and implement single-bit error correction.\n• Implemented recursive tree traversal and nested function calls with explicit stack frames and register preservation.",
-        tech: ["AArch64 Assembly", "Python", "GCC", "GNU Make", "Bit Manipulation", "Stack Management"],
-        links: [
-          { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/ac-lab-gurmo06" },
-        ],
-      },
-      {
-        slug: "pipelined-processor-emulator",
-        name: "Pipelined Processor Emulator",
-        description: "• Implemented a five-stage ARM processor pipeline in C, covering instruction fetch, decode, execution, memory access, and register writeback.\n• Added register forwarding, pipeline stalls, and bubbles to handle data dependencies, load-use hazards, and branch mispredictions.\n• Built a configurable set-associative data cache with LRU replacement, dirty-block tracking, and cache-miss stalls integrated into pipeline execution.",
-        tech: ["C", "AArch64 Assembly", "GCC", "GNU Make", "Git", "Pipeline Hazards", "Cache Design"],
-        links: [
-          { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/se-lab-gurmo" },
-        ],
-      },
-      {
         slug: "energy-efficient-graphics-api-benchmark",
         name: "Energy-Efficient Graphics API Benchmark",
         description: "• A GPU efficiency benchmark comparing Vulkan, Direct3D 12, and OpenGL across graphical workloads.\n• Collected FPS, benchmark scores, power, and thermal data across repeated trials.\n• Derived performance-per-watt metrics and found Vulkan delivered the strongest measured efficiency.",
@@ -115,51 +251,6 @@ export const projectLists: ProjectList[] =
         links: [
           { label: "Project Materials", href: "https://drive.google.com/drive/folders/100RdI8gwuy1POOvWJe_-mHTs1zqBgQvl" },
           { label: "Final Presentation", href: "https://docs.google.com/presentation/d/1KMgr8faMLR5ugqFHvBPF5oRsZ7OuxTzBNbnGVdhQQqg/edit?usp=sharing" },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Systems Programming",
-    projects:
-    [
-      {
-        slug: "pintos-operating-system",
-        name: "Pintos Operating System",
-        description: "• Implemented priority scheduling, nested priority donation, and timer-based thread sleeping, coordinating kernel threads with locks, semaphores, and condition variables.\n• Added user process execution and system calls with memory validation, then implemented demand paging, dynamic stack growth, page eviction, and disk swapping.\n• Extended the file system with dynamically growing files, direct and indirect block indexing, hierarchical directories, and synchronized access to shared file data.",
-        tech: ["C", "Pintos", "x86", "GCC", "GNU Make", "Git", "Multithreading", "Virtual Memory", "File Systems"],
-        links: [
-          { label: "P1: Threads - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-1-threads" },
-          { label: "P2: User Programs - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-2-userprog" },
-          { label: "P3: Virtual Memory - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-3-vm" },
-          { label: "P4: File Systems - Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/pintos-4-filesys" },
-        ],
-      },
-      {
-        slug: "unix-shell",
-        name: "Unix Shell",
-        description: "• Built a shell in C supporting interactive commands and script execution, with command parsing, configurable executable search paths, and built-in cd, exit, and path commands.\n• Implemented concurrent command execution using fork, execv, and waitpid, plus standard output and error redirection through dup2.",
-        tech: ["C", "POSIX System Calls", "Linux", "GCC", "GNU Make", "Git", "Process Coordination", "File Descriptor Management"],
-        links: [
-          { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/shell" },
-        ],
-      },
-      {
-        slug: "command-interpreter",
-        name: "Command Interpreter",
-        description: "• Built a parser and interpreter in C for an assembly-like language supporting arithmetic, bitwise operations, comparisons, and memory access.\n• Implemented conditional branching and label resolution using a hash table to support loops and program control flow.\n• Added function calls and returns using a stack to preserve execution state and restore variables.",
-        tech: ["C", "GCC", "GNU Make", "Git", "Language Interpretation", "Parsing"],
-        links: [
-          { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/ci-lab-gurmo06" },
-        ],
-      },
-      {
-        slug: "dynamic-memory-allocator",
-        name: "Dynamic Memory Allocator",
-        description: "• Built a custom memory allocator in C with allocation and deallocation routines backed by six size-segregated free lists.\n• Implemented block splitting, adjacent free-block coalescing, and page-aligned heap expansion to reuse memory and manage fragmentation.\n• Developed a heap consistency checker to detect overlapping blocks, alignment violations, incorrect free-list ordering, and allocation-state errors.",
-        tech: ["C", "GCC", "GNU Make", "Git", "Memory Allocation", "Heap Debugging"],
-        links: [
-          { label: "Source", href: "https://gurmo-server.whydah-ruler.ts.net/gurmo/mm-lab-gurmo06" },
         ],
       },
     ],
@@ -273,4 +364,10 @@ export const projectLists: ProjectList[] =
   },
 ];
 
-export const projects = projectLists.flatMap((list) => list.projects);
+function flattenProject(project: Project): Project[]
+{
+  return [project, ...(project.children ?? []).flatMap(flattenProject)];
+}
+
+// Include nested projects so their existing URLs remain statically generated.
+export const projects = projectLists.flatMap((list) => list.projects.flatMap(flattenProject));

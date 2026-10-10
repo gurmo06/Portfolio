@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/Bio";
 import Link from "@/components/Link";
+import ProjectCard from "@/components/ProjectCard";
 
 type Props =
 {
@@ -38,12 +39,21 @@ export default async function ProjectPage({ params }: Props)
     notFound();
   }
 
+  const parent = projects.find((candidate) =>
+    candidate.children?.some((child) => child.slug === project.slug)
+  );
+
   return(
     <main className = "min-h-screen bg-background text-foreground">
         <div className = "mx-auto max-w-4xl px-6 py-16">
-          <Link href = "/">
-            ← Back
-          </Link>
+          <nav aria-label = "Project navigation" className = "flex flex-wrap gap-3">
+            <Link href = "/">← All projects</Link>
+            {parent && (
+              <Link href = {`/projects/${parent.slug}`} className = "max-w-full">
+                ← {parent.name}
+              </Link>
+            )}
+          </nav>
 
           <section className = "mt-10 space-y-5">
             <div className = "space-y-3">
@@ -91,6 +101,39 @@ export default async function ProjectPage({ params }: Props)
               </div>
             )}
           </section>
+
+          {project.children && project.children.length > 0 && (
+            <section aria-labelledby = "suite-projects-heading" className = "mt-10 space-y-4">
+              <h2 id = "suite-projects-heading" className = "border-b border-foreground/15 pb-2 text-2xl font-semibold">
+                Projects
+              </h2>
+              <div className = "grid grid-cols-1 gap-3">
+                {project.children.map((child) => (
+                  <ProjectCard key = {child.slug} href = {`/projects/${child.slug}`} className = "min-w-0">
+                    <div className = "flex items-start justify-between gap-4">
+                      <h3 className = "min-w-0 break-words text-base font-semibold text-foreground group-hover:text-muted-fg transition">
+                        {child.name}
+                      </h3>
+                      <span aria-hidden = "true" className = "shrink-0 text-foreground group-hover:text-muted-fg transition">→</span>
+                    </div>
+                    <p className = "mt-2 break-words whitespace-pre-wrap text-sm text-foreground leading-relaxed group-hover:text-muted-fg transition">
+                      {child.description.trim()}
+                    </p>
+                    <div className = "mt-4 flex flex-wrap gap-1">
+                      {child.tech.map((tech) => (
+                        <span key = {tech} className = "max-w-full break-words rounded-full bg-muted px-3 py-1 text-xs text-foreground group-hover:text-muted-fg transition">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {child.children && child.children.length > 0 && (
+                      <p className = "mt-3 text-sm text-muted-fg">{child.children.length} projects</p>
+                    )}
+                  </ProjectCard>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </main>
   );
